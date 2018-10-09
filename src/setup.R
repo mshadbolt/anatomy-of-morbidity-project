@@ -17,6 +17,8 @@ installed_packages <- installed.packages()
 # Take the difference to only install those packages that aren't already installed
 packages_to_install <- setdiff(useful_packages, rownames(installed_packages))
 
+install.packages(packages_to_install)
+
 # check that all the installations were successful
 installed_packages <- installed.packages()
 packages_to_install <- setdiff(useful_packages, rownames(installed_packages))
