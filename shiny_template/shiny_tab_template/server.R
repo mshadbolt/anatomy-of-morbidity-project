@@ -7,6 +7,7 @@ server <- function(input, output) {
   # dependencies on the inputs and the data reactive expression are
   # both tracked, and all expressions are called in the sequence
   # implied by the dependency graph.
+  
   output$plot_cause <- renderPlot({
     year_input <- input$year
     sex_input <- input$sex

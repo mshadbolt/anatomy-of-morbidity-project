@@ -6,7 +6,9 @@ library(shiny)
 ui <- fluidPage(
   
   # App title ----
-  titlePanel("The anatomy of Morbidity"),
+  titlePanel("The Anatomy of Morbidity in Canada"),
+  p("The data in these visualisations is taken from ", a("Deaths, causes of death and life expectancy, 2016 dataset ",
+       href = "https://www150.statcan.gc.ca/n1/daily-quotidien/180628/dq180628b-eng.htm"), "."),
   
   tabsetPanel(
     type = "tabs",
@@ -37,7 +39,8 @@ ui <- fluidPage(
                              step = 1)
                  ),
                  mainPanel(
-                   plotOutput("plot_cause")
+                   plotOutput("plot_cause"),
+                   p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
                )
             )),
     tabPanel("Males vs Females", 
@@ -57,7 +60,8 @@ ui <- fluidPage(
                                         step = 1)
                ),
                mainPanel(plotOutput("plot_male"),
-                         plotOutput("plot_female"))
+                         plotOutput("plot_female"),
+                         p("This visualisation was created using a derivative of:  Table 13-10-0392 Deaths and age-specific mortality rates, by selected grouped causes"))
              )),
     tabPanel("When we die", 
              sidebarLayout(
