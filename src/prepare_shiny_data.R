@@ -1,6 +1,8 @@
 # This script prepares the data and saves it in the shiny directory
+library(tidyverse)
 
 path_to_git_repo <- "~/Desktop/github_repos/anatomy-of-morbidity-project/"
+previous_wd <- getwd()
 setwd(path_to_git_repo)
 source("src/data_clean_up.R")
 
@@ -8,10 +10,12 @@ cause_of_death_rates <- data_top_category_filtered %>%
   filter(str_detect(Characteristics, "^Age-specific")) %>%
   rename(year = REF_DATE, age = `Age at time of death`, cause = `Cause of death (ICD-10)`,
          rate_per_100k = VALUE) %>%
+  filter(age != "not stated") %>%
   mutate(age_factor = factor(age)) 
 
 cause_of_death_rates$age_factor <- ordered(cause_of_death_rates$age_factor,
-                                           levels = c("under 1 year",
+                                           levels = c("all ages",
+                                                      "under 1 year",
                                                       "1 to 4 years", 
                                                       "5 to 9 years",
                                                       "10 to 14 years",
@@ -34,3 +38,5 @@ cause_of_death_rates$age_factor <- ordered(cause_of_death_rates$age_factor,
                                            ))
 
 saveRDS(cause_of_death_rates, "shiny_template/shiny_tab_template/cause_of_death_rates.rds")
+
+setwd(previous_wd)
