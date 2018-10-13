@@ -30,7 +30,7 @@ server <- function(input, output) {
             )
   })
   
-  output$plot_cause_new <- renderPlot({
+  output$plot_cause_new <- renderGvis({
     year_input <- input$year
     sex_input <- input$sex
     if (length(sex_input > 1)) {
@@ -58,7 +58,7 @@ server <- function(input, output) {
     )
     
     # Join the dataframes
-    tree_data <- bind_rows(tree_data, tree_data_add)
+    filtered_tree_data <- bind_rows(filtered_tree_data, filtered_tree_data_add)
     
     gvisTreeMap(
       filtered_tree_data,
@@ -72,7 +72,7 @@ server <- function(input, output) {
         maxColor='#ff6a00',
         highlightOnMouseOver=TRUE
       )
-    ) %>% plot()
+    )
   })
   
   output$test <- renderText(input$sex)
