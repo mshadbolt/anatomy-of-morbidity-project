@@ -22,6 +22,7 @@ ui <- fluidPage(
                                     choices = list("Male" = "Males",
                                                    "Female" = "Females"),
                                     selected = "Males"),
+                 verbatimTextOutput("test"),
                  # br() element to introduce extra vertical spacing ----
                  br(),
                  selectInput(inputId = "age", 
@@ -36,9 +37,11 @@ ui <- fluidPage(
                              value = 2000,
                              min = min(cause_of_death_rates$year),
                              max = max(cause_of_death_rates$year), 
-                             step = 1)
+                             step = 1,
+                             sep = "")
                  ),
                  mainPanel(
+                   p("Relative proportions of different causes of death. The user can select which sex they are interested in, what age group and the year."),
                    plotOutput("plot_cause"),
                    p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
                )
@@ -57,7 +60,8 @@ ui <- fluidPage(
                                         value = 2000,
                                         min = min(cause_of_death_rates$year),
                                         max = max(cause_of_death_rates$year), 
-                                        step = 1)
+                                        step = 1,
+                                        sep = "")
                ),
                mainPanel(plotOutput("plot_male"),
                          plotOutput("plot_female"),

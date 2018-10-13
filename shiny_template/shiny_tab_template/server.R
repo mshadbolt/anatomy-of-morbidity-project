@@ -11,12 +11,14 @@ server <- function(input, output) {
   output$plot_cause <- renderPlot({
     year_input <- input$year
     sex_input <- input$sex
+    if (length(sex_input > 1)) {
+      sex_input == "Both sexes"
+    }
     age_input <- input$age
-    
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
-      filter(year == year_input,
-             Sex %in% sex_input,
-             age_factor == age_input)
+        filter(year == year_input,
+               Sex %in% sex_input,
+               age_factor == age_input)
     
     treemap(filtered_cause_of_death_rates, #Your data frame object
             index="cause",  #A list of your categorical variables
@@ -27,6 +29,8 @@ server <- function(input, output) {
             fontsize.title = 14 #Change the font size of the title
             )
   })
+  
+  output$test <- renderText(input$sex)
   
   output$plot_male <- renderPlot({
     year_input <- input$yearMF
