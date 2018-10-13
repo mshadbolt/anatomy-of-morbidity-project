@@ -1,3 +1,1 @@
-## REPORT directory
-
-Here is where we will put our working versions and final report.
+This is where we will put all individuals Rmd report to pull into the bookdown
