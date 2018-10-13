@@ -70,7 +70,10 @@ server <- function(input, output) {
         minColor='#ee0979',
         # midColor='#D76D77',
         maxColor='#ff6a00',
-        highlightOnMouseOver=TRUE
+        highlightOnMouseOver=TRUE,
+        generateTooltip = "function(row, size, value) { 
+                              return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+    }"
       )
     )
   })
