@@ -42,7 +42,7 @@ ui <- fluidPage(
                  ),
                  mainPanel(
                    p("Relative proportions of different causes of death. The user can select which sex they are interested in, what age group and the year."),
-                   plotOutput("plot_cause"),
+                   plotOutput("plot_cause_new"),
                    p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
                )
             )),

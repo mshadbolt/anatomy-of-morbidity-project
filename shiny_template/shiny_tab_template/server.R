@@ -17,7 +17,7 @@ server <- function(input, output) {
     age_input <- input$age
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
         filter(year == year_input,
-               Sex %in% sex_input,
+               Sex == sex_input,
                age_factor == age_input)
     
     treemap(filtered_cause_of_death_rates, #Your data frame object
@@ -28,6 +28,51 @@ server <- function(input, output) {
             title="Causes of Death Canada", #Customize your title
             fontsize.title = 14 #Change the font size of the title
             )
+  })
+  
+  output$plot_cause_new <- renderPlot({
+    year_input <- input$year
+    sex_input <- input$sex
+    if (length(sex_input > 1)) {
+      sex_input == "Both sexes"
+    }
+    age_input <- input$age
+    
+    filtered_tree_data <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    # Create a new row for the parent
+    # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    
+    filtered_tree_data_add <- tibble(
+      cause=c("Number of deaths"),
+      Characteristics=c(NA),
+      value_plus=c(1), #sum(tree_data$value_plus),
+      cause_id=c(NA),
+      Sex=c(NA),
+      year=c(NA),
+      age_factor = c(NA),
+      total_deaths = c(NA)
+    )
+    
+    # Join the dataframes
+    tree_data <- bind_rows(tree_data, tree_data_add)
+    
+    gvisTreeMap(
+      filtered_tree_data,
+      "cause",
+      "Characteristics",
+      "value_plus",
+      "cause_id",
+      options=list(
+        minColor='#ee0979',
+        # midColor='#D76D77',
+        maxColor='#ff6a00',
+        highlightOnMouseOver=TRUE
+      )
+    ) %>% plot()
   })
   
   output$test <- renderText(input$sex)
