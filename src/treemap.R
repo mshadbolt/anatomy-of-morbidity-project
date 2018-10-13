@@ -1,6 +1,9 @@
 library(tidyverse)
 library(googleVis)
+library(jsonlite)
 
+source("src/gvis.R")
+source("src/gvisTreeMap.R")
 source("src/data_clean_up.R")
 
 # Select data for a specific year, for both sexes and all ages
@@ -47,6 +50,9 @@ gvisTreeMap(
     minColor='#ee0979',
     # midColor='#D76D77',
     maxColor='#ff6a00',
-    highlightOnMouseOver=TRUE
+    highlightOnMouseOver=TRUE,
+    generateTooltip = "function(row, size, value) { 
+                              return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+    }"
     )
   ) %>% plot()
