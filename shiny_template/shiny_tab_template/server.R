@@ -91,16 +91,157 @@ server <- function(input, output) {
 
   
   output$plot_cause_new <- renderGvis({
-    cause_of_death_treemap(input$year,input$sex,input$age)
+#    cause_of_death_treemap(input$year,input$sex,input$age)
+    year_input <- input$year
+    sex_input <- input$sex
+    age_input <- input$age
+    
+    filtered_tree_data <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    # Create a new row for the parent
+    # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    
+    filtered_tree_data_add <- tibble(
+      cause=c("Number of deaths"),
+      Characteristics=c(NA),
+      value_plus=c(1), #sum(tree_data$value_plus),
+      cause_id=c(NA),
+      Sex=c(NA),
+      year=c(NA),
+      age_factor = c(NA),
+      total_deaths = c(NA)
+    )
+    
+    # Join the dataframes
+    filtered_tree_data_1 <- bind_rows(filtered_tree_data, filtered_tree_data_add)
+    
+    gvisTreeMap(
+      filtered_tree_data_1,
+      "cause",
+      "Characteristics",
+      "value_plus",
+      "cause_id",
+      options=list(
+        minColor='#ee0979',
+        # midColor='#D76D77',
+        maxColor='#ff6a00',
+        highlightOnMouseOver=TRUE,
+        fontFamily="system-ui",
+        generateTooltip = "function(row, size, value) { 
+        return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+  }"
+      )
+      )
+  
   })
   
   output$plot_male1 <-renderGvis({
-    cause_of_death_treemap(input$yearMF,"Males",input$ageMF)
+#    cause_of_death_treemap(input$yearMF,"Males",input$ageMF)
+    year_input <- input$yearMF
+    sex_input <- "Males"
+    age_input <- input$ageMF
+    
+    filtered_tree_data_2 <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    # Create a new row for the parent
+    # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    
+    filtered_tree_data_add_2 <- tibble(
+      cause=c("Number of deaths"),
+      Characteristics=c(NA),
+      value_plus=c(1), #sum(tree_data$value_plus),
+      cause_id=c(NA),
+      Sex=c(NA),
+      year=c(NA),
+      age_factor = c(NA),
+      total_deaths = c(NA)
+    )
+    
+    # Join the dataframes
+    filtered_tree_data_2 <- bind_rows(filtered_tree_data_2, filtered_tree_data_add_2)
+    
+    a = gvisTreeMap(
+      filtered_tree_data_2,
+      "cause",
+      "Characteristics",
+      "value_plus",
+      "cause_id",
+      options=list(
+        minColor='#ee0979',
+        # midColor='#D76D77',
+        maxColor='#ff6a00',
+        highlightOnMouseOver=TRUE,
+        fontFamily="system-ui",
+        generateTooltip = "function(row, size, value) { 
+        return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+  }"
+      ),
+      chartid = 1
+      )
+
   })
   
   output$plot_female1 <-renderGvis({
-    cause_of_death_treemap(input$yearMF,"Females",input$ageMF)
+#    cause_of_death_treemap(input$yearMF,"Females",input$ageMF)
+    year_input <- input$yearMF
+    sex_input <- "Females"
+    age_input <- input$ageMF
+    
+    filtered_tree_data_3 <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    # Create a new row for the parent
+    # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    
+    filtered_tree_data_add_3 <- tibble(
+      cause=c("Number of deaths"),
+      Characteristics=c(NA),
+      value_plus=c(1), #sum(tree_data$value_plus),
+      cause_id=c(NA),
+      Sex=c(NA),
+      year=c(NA),
+      age_factor = c(NA),
+      total_deaths = c(NA)
+    )
+    
+    # Join the dataframes
+    filtered_tree_data_3 <- bind_rows(filtered_tree_data_3, filtered_tree_data_add_3)
+    
+    gvisTreeMap(
+      filtered_tree_data_3,
+      "cause",
+      "Characteristics",
+      "value_plus",
+      "cause_id",
+      options=list(
+        minColor='#ee0979',
+        # midColor='#D76D77',
+        maxColor='#000000',
+        highlightOnMouseOver=TRUE,
+        fontFamily="system-ui",
+        generateTooltip = "function(row, size, value) { 
+        return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+  }"
+      ),
+      chartid = 2
+    )
+    
   })
+
+  # output$plot_MF <-renderGvis({
+  #     a= cause_of_death_treemap(input$yearMF,"Females",input$ageMF)
+  #     b= cause_of_death_treemap(input$yearMF,"Males",input$ageMF)
+  #     gvisMerge(a,b, horizontal=FALSE) 
+  # })
+  
   
   output$plot_female <- renderPlot({
     year_input <- input$yearMF
