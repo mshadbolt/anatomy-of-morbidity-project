@@ -65,6 +65,7 @@ server <- function(input, output) {
         # midColor='#D76D77',
         maxColor='#ff6a00',
         highlightOnMouseOver=TRUE,
+        fontFamily="system-ui",
         generateTooltip = "function(row, size, value) { 
                               return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
     }"

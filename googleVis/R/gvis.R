@@ -190,17 +190,14 @@ callbacks.shift()();
   )
   
   #########
-
-# \'Cause: \' + data.getValue(row, 1) + \'<br>\' +
+  
 jsDrawChart <- '
 // jsDrawChart
 
 // ** begin modified portion **//
 function showFullTooltip(row, size, value) {
-var data = gvisData%s();
 return \'<div style="background:#fd9; padding:10px; border-style:solid">\' +
-\'Cause of death: \' + data.getValue(row, 0) + \'<div>\' +
-\'Number of Deaths: \' + (data.getValue(row, 2)-1)  + \'<div>\';
+\'Number of Deaths: \' + size + \'<div>\';
 }
 // ** end modified portion **//
 
@@ -217,7 +214,7 @@ options["generateTooltip"] = showFullTooltip;
 }
 %s  
 '
-jsDrawChart <- sprintf(jsDrawChart, chartid, chartid,  chartid,
+jsDrawChart <- sprintf(jsDrawChart, chartid,  chartid,
                        paste(gvisOptions(options), collapse="\n"),
                        jsFormats,
                        gvisNewChart(chartid,type,options),
