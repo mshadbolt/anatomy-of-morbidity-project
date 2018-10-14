@@ -1,5 +1,0 @@
-# shiny example
-
-<iframe src ="https://mshadbolt.shinyapps.io/causes_initial/" height=600px width=800px />
-
-s
