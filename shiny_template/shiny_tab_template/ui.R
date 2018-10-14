@@ -41,7 +41,8 @@ ui <- fluidPage(
                              min = min(cause_of_death_rates$year),
                              max = max(cause_of_death_rates$year), 
                              step = 1,
-                             sep = "")
+                             sep = ""),
+                 width = 3
                  ),
                  mainPanel(
                    htmlOutput("plot_cause_new"),
@@ -63,7 +64,8 @@ ui <- fluidPage(
                                         min = min(cause_of_death_rates$year),
                                         max = max(cause_of_death_rates$year), 
                                         step = 1,
-                                        sep = "")
+                                        sep = ""),
+                            width = 3
                ),
                mainPanel(plotOutput("plot_male"),
                          plotOutput("plot_female"),
@@ -71,12 +73,12 @@ ui <- fluidPage(
              )),
     tabPanel("When we die", 
              sidebarLayout(
-               sidebarPanel(),
+               sidebarPanel(width = 3),
                mainPanel(plotOutput("plot_expec"))
                )),
     tabPanel("Where we die", 
              sidebarLayout(
-               sidebarPanel(),
+               sidebarPanel(width = 3),
                mainPanel(plotOutput("plot_map")))) #,
     #tabPanel("Summary", verbatimTextOutput("summary")),
     #tabPanel("Table", tableOutput("table")
