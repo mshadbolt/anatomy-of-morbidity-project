@@ -1,0 +1,150 @@
+---
+title: "Map-canada"
+output: html_document
+---
+
+```{r canada}
+  library(leaflet)
+  library(rgdal)
+    
+year_input <- 2002
+  
+# Read and clean the data
+df <- fread("./data/life_data_sep_avg.csv")
+df[, V1 := NULL]
+df$GEO <- str_replace_all(df$GEO,"Quebec","Québec")
+
+df_male <- df[YEAR == year_input & GEO != "Canada" & Age_group == 0 & Sex == "M" & Element == "Life expectancy (in years) at age x (ex)"]
+df_female <- df[YEAR == year_input & GEO != "Canada" & Age_group == 0 & Sex == "F" & Element == "Life expectancy (in years) at age x (ex)"]
+df_both <- df[YEAR == year_input & GEO != "Canada" & Age_group == 0 & Sex == "Both" & Element == "Life expectancy (in years) at age x (ex)"]
+df <- df[YEAR == year_input & GEO != "Canada" & Age_group == 0 & Element == "Life expectancy (in years) at age x (ex)"]
+
+print(glimpse(df))
+
+# If the .shp files (provinces) aren't already downloaded on your system, this command downloads them
+  if (!file.exists("./polygons/ne_50m_admin_1_states_provinces_lakes/ne_50m_admin_1_states_provinces_lakes.dbf")){
+    download.file(file.path('http://www.naturalearthdata.com/http/',
+                            'www.naturalearthdata.com/download/50m/cultural',
+                            'ne_50m_admin_1_states_provinces_lakes.zip'), 
+                  f <- tempfile())
+    unzip(f, exdir = "./polygons/ne_50m_admin_1_states_provinces_lakes")
+    rm(f)
+  }
+  
+  # Read the .shp files
+  provinces <- readOGR("./polygons/ne_50m_admin_1_states_provinces_lakes", 'ne_50m_admin_1_states_provinces_lakes', encoding='UTF-8')
+  
+  
+  provinces2_both  <- sp::merge(
+  provinces,
+  df_both,
+  by.x = "name",
+  by.y = "GEO",
+  sort = FALSE
+)
+  
+    provinces2_male  <- sp::merge(
+  provinces,
+  df_male,
+  by.x = "name",
+  by.y = "GEO",
+  sort = FALSE
+)
+  
+      provinces2_female  <- sp::merge(
+  provinces,
+  df_female,
+  by.x = "name",
+  by.y = "GEO",
+  sort = FALSE
+)
+      
+  clear <- "#F2EFE9"
+  lineColor <- "#000000"
+  hoverColor <- "red"
+  lineWeight <- 0.5
+  pal <- colorNumeric(palette = 'Spectral', c(max(df$AVG_VALUE), min(df$AVG_VALUE)), reverse = TRUE)
+
+provinces2 %>% 
+leaflet() %>% 
+    leaflet(options = leafletOptions(zoomControl = FALSE,
+                                   minZoom = 3, maxZoom = 3,
+                                   dragging = FALSE)) %>%
+    addTiles() %>% 
+    setView(-110.09, 62.7,  zoom = 3) %>% 
+    addPolygons(data = subset(provinces2_both, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Québec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+                fillColor = ~ pal(AVG_VALUE),
+                fillOpacity = 0.75,
+                stroke = TRUE,
+                weight = lineWeight,
+                color = lineColor,
+                highlightOptions = highlightOptions(fillOpacity = 1, bringToFront = TRUE, sendToBack = TRUE),
+                label=~stringr::str_c(
+                name,' ',
+                formatC(AVG_VALUE)),
+              labelOptions= labelOptions(direction = 'auto'),
+              group = "Both") %>%
+      addPolygons(data = subset(provinces2_male, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Québec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+                fillColor = ~ pal(AVG_VALUE),
+                fillOpacity = 0.75,
+                stroke = TRUE,
+                weight = lineWeight,
+                color = lineColor,
+                highlightOptions = highlightOptions(fillOpacity = 1, bringToFront = TRUE, sendToBack = TRUE),
+                label=~stringr::str_c(
+                name,' ',
+                formatC(AVG_VALUE)),
+              labelOptions= labelOptions(direction = 'auto'),
+              group = "Male") %>%
+      addPolygons(data = subset(provinces2_female, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Québec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+                fillColor = ~ pal(AVG_VALUE),
+                fillOpacity = 0.75,
+                stroke = TRUE,
+                weight = lineWeight,
+                color = lineColor,
+                highlightOptions = highlightOptions(fillOpacity = 1, bringToFront = TRUE, sendToBack = TRUE),
+                label=~stringr::str_c(
+                name,' ',
+                formatC(AVG_VALUE)),
+              labelOptions= labelOptions(direction = 'auto'),
+              group = "Female") %>%
+  # Add the checklist
+    addLayersControl(overlayGroups = c('Male',
+                        'Female'),
+                        options = layersControlOptions(collapsed = FALSE),
+                        position = 'topright') %>%
+    addLegend(pal = pal, 
+                  values = df$AVG_VALUE,
+                  position = "bottomleft", 
+                  title = "Life Expectancy",
+                  labFormat = labelFormat(suffix = " Years", transform = function(x) sort(x, decreasing = FALSE))
+                ) %>%
+  addLayersControl(
+    position = "topleft",
+    baseGroups = c("Male", "Female", "Both"),
+    #overlayGroups = c("sfbdjsd", "sdbjskfdk"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+  
+
+```
+
+
+```{r colour by life expectency}
+  
+   # Color by quantile
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorQuantile("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  # Numeric palette
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorNumeric("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  # Bin
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorBin("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  ```
