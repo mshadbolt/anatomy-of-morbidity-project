@@ -17,6 +17,8 @@ tree_data <- readRDS("tree_data.rds")
 # filtered and cleaned rate data
 cause_of_death_rates <- readRDS("cause_of_death_rates.rds")
 
+df <- readRDS("filtered_life_data.rds")
+
 ### To load the interactive map
 library(leaflet)
 library(rgdal)
