@@ -29,8 +29,8 @@ life_data_sep_avg[, Age_group := as.integer(Age_group)]
 life_data_sep_avg[, YEAR := as.integer(YEAR)]
 
 ##label settings 
-titleformat <- element_text(face = "bold", size = 14)
-labelformat <- element_text(face = "bold", size = 12)
+titleformat <- element_text(face = "bold", size = 14, color = "black")
+labelformat <- element_text(face = "bold", size = 12, color = "black")
 
 ###------------------------POOLED vISUALIZATIONS BY PROVINCE ----------------------------- 
 ###------------Number of survivors at age x--------
