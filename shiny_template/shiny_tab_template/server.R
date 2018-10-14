@@ -117,6 +117,30 @@ server <- function(input, output) {
     )
   })
   
+  output$plot_map <- renderLeaflet({
+    leaflet() %>% 
+      # Disable movement, keep map static
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 3, maxZoom = 3,
+                                       dragging = FALSE)) %>%
+      addTiles() %>% 
+      setView(-110.09, 62.7,  zoom = 3) %>% 
+      addPolygons(data = subset(provinces, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Quebec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+                  # Province shading
+                  fillColor = rainbow(14, alpha = NULL), stroke = FALSE,
+                  weight = 1,
+                  # Popup annotations
+                  popup = "idk") %>%
+      # Checklist
+      addLayersControl(overlayGroups = c('idk',
+                                         'what',
+                                         'the',
+                                         'options',
+                                         'are'),
+                       options = layersControlOptions(collapsed = FALSE),
+                       position = 'topright')
+  })
+  
   # Generate a summary of the data ----
   # output$summary <- renderPrint({
   #   summary(d())

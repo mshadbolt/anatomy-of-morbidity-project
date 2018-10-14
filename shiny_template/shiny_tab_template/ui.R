@@ -76,10 +76,22 @@ ui <- fluidPage(
                sidebarPanel(width = 3),
                mainPanel(plotOutput("plot_expec"))
                )),
-    tabPanel("Where we die", 
+    tabPanel("Life by Province", 
              sidebarLayout(
-               sidebarPanel(width = 3),
-               mainPanel(plotOutput("plot_map")))) #,
+               sidebarPanel(selectInput(inputId = "age", 
+                                        label = "Age category", 
+                                        choices = levels(cause_of_death_rates$age_factor), 
+                                        selected = NULL, multiple = FALSE,
+                                        selectize = TRUE, width = NULL, size = NULL),
+                            sliderInput(inputId = "year",
+                                        label = "Year:",
+                                        value = 2000,
+                                        min = min(cause_of_death_rates$year),
+                                        max = max(cause_of_death_rates$year), 
+                                        step = 1,
+                                        sep = ""),
+                            width = 3),
+               mainPanel(leafletOutput("plot_map")))) #,
     #tabPanel("Summary", verbatimTextOutput("summary")),
     #tabPanel("Table", tableOutput("table")
   )
