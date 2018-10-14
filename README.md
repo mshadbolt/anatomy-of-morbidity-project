@@ -1,4 +1,4 @@
-# Deciphering the Longitudinal Anatomy of Morbidity in Canada
+# Deciphering the Anatomy of Morbidity in Canada 
 
 The HackSeq18 Anatomy of Morbidity project space.
 
