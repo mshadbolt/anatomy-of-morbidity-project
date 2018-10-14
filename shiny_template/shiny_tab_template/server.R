@@ -61,9 +61,9 @@ server <- function(input, output) {
       "value_plus",
       "cause_id",
       options=list(
-        minColor='#D38312',
-        # midColor='#D76D77',
-        maxColor='#A83279',
+        minColor='#EE6C81',
+        midColor='#777CA8',
+        maxColor= '#AFBACD',
         highlightOnMouseOver=TRUE,
         generateTooltip = "function(row, size, value) { 
                               return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
@@ -117,7 +117,7 @@ server <- function(input, output) {
       filter(year == year_input,
              Sex %in% sex_input,
              age_factor == age_input)
-    
+
     treemap(filtered_cause_of_death_rates, #Your data frame object
             index="cause",  #A list of your categorical variables
             vSize = "rate_per_100k",  #This is your quantitative variable
