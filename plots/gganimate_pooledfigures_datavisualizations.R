@@ -172,5 +172,5 @@ maledeathplot <- ggplot(maledeathdata, aes(Age_group, AVG_VALUE, color = GEO)) +
 ##view 
 maledeathplot
 ##save the plot 
-anim_save("gganimmaledeathplot.gif", animation = last_animation(), path = '~')
+anim_save("maledeathplot.gif", animation = last_animation(), path = '~')
 
