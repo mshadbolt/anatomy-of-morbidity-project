@@ -1,0 +1,76 @@
+---
+title: "Life Expectancy in Different provinces"
+author: "Emily Gong"
+date: "October 13, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=8,
+                      echo=FALSE, warning=FALSE, message=FALSE)
+knitr::opts_knit$set(root.dir = "../")
+```
+
+```{r Load dependencies}
+library(data.table)
+library(ggplot2)
+library(plotly)
+```
+
+```{r Load data}
+data2 <- fread("data/max_deaths_age_modified.csv", sep = ",")
+lifeExp <- data2[ !(data2$GEO == "Canada"),]
+
+lifeExpFemale <- data2[data2$Sex == "F" & !(data2$GEO == "Canada"),]
+lifeExpMale   <- data2[data2$Sex == "M" & !(data2$GEO == "Canada"),]
+
+YearF <- lifeExpFemale[,lifeExpFemale$YEAR]
+YearM <- lifeExpMale[,lifeExpMale$YEAR]
+
+RegionF <- lifeExpFemale[, lifeExpFemale$GEO]
+RegionM <- lifeExpMale[, lifeExpMale$GEO]
+
+female <- lifeExpFemale[,lifeExpFemale$Avg_age]
+male <- lifeExpMale[,lifeExpMale$Avg_age]
+```
+
+```{r}
+p <-  plot_ly(
+  x = YearF,
+  #c('Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Quebec','Saskatchewan'), 
+  y = female,
+  name = 'Female',
+  color = 'red',
+  
+  frame = RegionF,  
+  type = 'scatter', 
+  mode = 'markers'
+) %>%
+ add_trace(x = YearM, y = male, frame = RegionM, name = 'Male', color = 'blue', mode = 'markers')  %>%
+  
+  layout(
+    title = "Life Expectancy Across Provinces (1980-2016)",
+    xaxis = list(
+      type = "linear",
+      title = 'YEAR'
+    ),
+    yaxis = list(
+      title = 'AGE'
+    )
+  )
+
+p <- p %>% 
+  animation_opts(
+    1000, easing = "elastic", redraw = FALSE
+  )
+
+p <- p %>% 
+  animation_button(
+    x = 1, xanchor = "right", y = 0, yanchor = "bottom"
+  )
+
+p
+```
+
+
+##
