@@ -1,3 +1,8 @@
+# This is a script that takes the cleaned data and shows how to construct an interactive
+# treemap using googleVis as a proof of concept for the implementation in Shiny.\
+
+# Author Sophia Chan
+
 library(tidyverse)
 library(googleVis)
 library(jsonlite)

@@ -1,4 +1,8 @@
-# This script prepares the data and saves it in the shiny directory
+# This script takes the cleaned data and makes a dataframe for input into the shiny 
+# 
+
+# Author: Marion Shadbolt
+
 library(tidyverse)
 
 path_to_git_repo <- "~/Desktop/github_repos/anatomy-of-morbidity-project/"
