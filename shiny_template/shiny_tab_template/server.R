@@ -11,9 +11,6 @@ server <- function(input, output) {
   output$plot_cause <- renderPlot({
     year_input <- input$year
     sex_input <- input$sex
-    if (length(sex_input > 1)) {
-      sex_input == "Both sexes"
-    }
     age_input <- input$age
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
         filter(year == year_input,
@@ -39,7 +36,7 @@ server <- function(input, output) {
       filter(year == year_input,
              Sex == sex_input,
              age_factor == age_input)
-    
+
     # Create a new row for the parent
     # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
     
@@ -75,7 +72,21 @@ server <- function(input, output) {
     )
   })
   
-  output$test <- renderText(input$sex)
+  output$death_total <- renderText({
+    year_input <- input$year
+    sex_input <- input$sex
+    age_input <- input$age
+    
+    filtered_tree_data <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    death_total = filtered_tree_data %>%
+      summarize(sum=sum(total_deaths))
+    
+    paste("Total number of deaths: <b>", death_total,"</b>", sep = " ")
+  })
   
   output$plot_male <- renderPlot({
     year_input <- input$yearMF

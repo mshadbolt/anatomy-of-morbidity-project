@@ -1,7 +1,6 @@
 library(shiny)
 
 
-
 # Define UI for random distribution app ----
 ui <- fluidPage(
   
@@ -45,6 +44,7 @@ ui <- fluidPage(
                  width = 3
                  ),
                  mainPanel(
+                   htmlOutput("death_total"),
                    htmlOutput("plot_cause_new"),
                    p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
                )
