@@ -1,13 +1,15 @@
 library(shiny)
 
+# <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro" rel="stylesheet">
 
 # Define UI for random distribution app ----
-ui <- fluidPage(
+ui <- fluidPage(theme="shiny.css",
+  
   
   # App title ----
   titlePanel("The Anatomy of Morbidity in Canada"),
-  p("The data in these visualisations is taken from ", a("Deaths, causes of death and life expectancy, 2016 dataset ",
-       href = "https://www150.statcan.gc.ca/n1/daily-quotidien/180628/dq180628b-eng.htm"), "."),
+  p("The data in these visualisations is taken from the ", a("Deaths, causes of death and life expectancy, 2016 dataset ",
+       href = "https://www150.statcan.gc.ca/n1/daily-quotidien/180628/dq180628b-eng.htm")),
   
   tabsetPanel(
     type = "tabs",
@@ -15,7 +17,7 @@ ui <- fluidPage(
              sidebarLayout(
                
                sidebarPanel(
-                 p("Relative proportions of different causes of death. The user can select which sex they are interested in, what age group and the year."),
+                 p("Relative proportions of different causes of death. Filter by sex, age group or year below."),
                  # Input: Select the random distribution type ----
                  radioButtons(inputId ="sex",
                               label ="Sex:",
@@ -41,12 +43,15 @@ ui <- fluidPage(
                              max = max(cause_of_death_rates$year), 
                              step = 1,
                              sep = ""),
-                 width = 3
+                 width = 3,
+                 p("This visualisation was created using a derivative of: ",
+                    a("Deaths and age-specific mortality rates, by selected grouped causes",
+                      href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039201")
+                   )
                  ),
                  mainPanel(
                    htmlOutput("death_total"),
-                   htmlOutput("plot_cause_new"),
-                   p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
+                   htmlOutput("plot_cause_new")
                )
             )),
     tabPanel("Males vs Females", 
@@ -68,14 +73,9 @@ ui <- fluidPage(
                             width = 3
                ),
                mainPanel(plotOutput("plot_male"),
-                         plotOutput("plot_female"),
-                         p("This visualisation was created using a derivative of:  Table 13-10-0392 Deaths and age-specific mortality rates, by selected grouped causes"))
+                         plotOutput("plot_female")
+                )
              )),
-    tabPanel("When we die", 
-             sidebarLayout(
-               sidebarPanel(width = 3),
-               mainPanel(plotOutput("plot_expec"))
-               )),
     tabPanel("Life by Province", 
              sidebarLayout(
                sidebarPanel(selectInput(inputId = "age", 

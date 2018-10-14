@@ -61,11 +61,10 @@ server <- function(input, output) {
       "value_plus",
       "cause_id",
       options=list(
-        minColor='#ee0979',
+        minColor='#D38312',
         # midColor='#D76D77',
-        maxColor='#ff6a00',
+        maxColor='#A83279',
         highlightOnMouseOver=TRUE,
-        fontFamily="system-ui",
         generateTooltip = "function(row, size, value) { 
                               return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
     }"
