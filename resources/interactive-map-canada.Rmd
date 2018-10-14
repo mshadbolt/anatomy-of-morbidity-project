@@ -1,0 +1,67 @@
+---
+title: "Map-canada"
+output: html_document
+---
+
+```{r canada}
+  library(leaflet)
+  library(rgdal)
+  
+  
+  # Map
+  if (!file.exists("./src/ref/ne_50m_admin_1_states_provinces_lakes/ne_50m_admin_1_states_provinces_lakes.dbf")){
+    download.file(file.path('http://www.naturalearthdata.com/http/',
+                            'www.naturalearthdata.com/download/50m/cultural',
+                            'ne_50m_admin_1_states_provinces_lakes.zip'), 
+                  f <- tempfile())
+    unzip(f, exdir = "./src/ref/ne_50m_admin_1_states_provinces_lakes")
+    rm(f)
+  }
+  
+  # Provinces
+  provinces <- readOGR("./src/ref/ne_50m_admin_1_states_provinces_lakes", 'ne_50m_admin_1_states_provinces_lakes', encoding='UTF-8')
+  
+  map <- leaflet() %>% 
+  # Disable movement, keep map static
+    leaflet(options = leafletOptions(zoomControl = FALSE,
+                                   minZoom = 3, maxZoom = 3,
+                                   dragging = FALSE)) %>%
+    addTiles() %>% 
+    setView(-110.09, 62.7,  zoom = 3) %>% 
+    addPolygons(data = subset(provinces, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Quebec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+  # Province shading
+                fillColor = rainbow(14, alpha = NULL), stroke = FALSE,
+                weight = 1,
+  # Popup annotations
+                popup = "idk") %>%
+  # Checklist
+    addLayersControl(overlayGroups = c('idk',
+                        'what',
+                        'the',
+                        'options',
+                        'are'),
+                        options = layersControlOptions(collapsed = FALSE),
+                        position = 'topright')
+  
+  map
+```
+
+
+```{r colour by life expectency}
+  
+   # Color by quantile
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorQuantile("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  # Numeric palette
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorNumeric("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  # Bin
+  map=leaflet(provinces)%>% addTiles()  %>% setView(-74.09, 45.7,  zoom = 3) %>%
+    addPolygons( stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, color = ~colorBin("YlOrRd", POP2005)(POP2005) )
+  map
+  
+  ```
