@@ -14,13 +14,9 @@ library(animation)
   #add in slider feature 
   #edit output width/height/resolution to be 1000px+ 
   #output to pdf 
-  #generate more plots 
   #add in plot descriptions 
-  #play with lines instead of geoms 
   #create rmarkdown sheet 
   #integrate with Shiny 
-  #side by side depiction of gender animations, with a slider for each? 
-  #plot age-0 mortality rates as animated box plotas currently is with each province along x axis 
 
 ###################################
 ##Import dataset
@@ -32,11 +28,12 @@ life_data_sep_avg <- fread("C:/Users/Owner/Documents/haqseq2018/life_data_sep_av
 life_data_sep_avg[, Age_group := as.integer(Age_group)]
 life_data_sep_avg[, YEAR := as.integer(YEAR)]
 
-##animation settings <- NOT DOING THE JOB** 
-gganimate::ani.options(width = 1000, height = 1000, resolution = 1000)
+##label settings 
+titleformat <- element_text(face = "bold", size = 14)
+labelformat <- element_text(face = "bold", size = 12)
 
 ###------------------------POOLED vISUALIZATIONS BY PROVINCE ----------------------------- 
-### Number of survivors at age x 
+###------------Number of survivors at age x--------
 ##prepare data for plot 
 survivordata <- life_data_sep_avg[Element == "Number of survivors at age x (lx)" & Sex %in% c("M", "F") & YEAR %in% seq(1980, 2016, 4)]
 survivordata
@@ -49,19 +46,19 @@ survivorggplot <- ggplot(survivordata, aes(Age_group, AVG_VALUE, color = Sex)) +
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_colour_discrete() +
-  # gganimate values 
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Survival Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors', color = "Sex") 
 
-
-##view survivor plot 
-survivorggplot 
-
+##view 
+survivorggplot
 ##save the plot 
-anim_save("gganimsurvivorplot.gif", animation = last_animation(), path = '~')
+anim_save("canadiansurvivorplot.gif", animation = last_animation(), path = '~')
 
-###Number of Deaths at age x 
+
+###------------Number of Deaths at age x-----------
 ##prepare data for plot 
 deathdata <- life_data_sep_avg[Element == "Number of deaths between age x and x+1 (dx)" & Sex %in% c("M", "F") & YEAR %in% seq(1980, 2016, 1)]
 deathdata
@@ -74,20 +71,22 @@ deathggplot <- ggplot (deathdata, aes(Age_group, AVG_VALUE, color = Sex)) +
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_colour_discrete() +
-  # gganimate values 
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Death Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths', color = "Sex") 
+
 
 ##view deathggplot
 deathggplot
 
 ##save the plot 
-anim_save("gganimdeathplot.gif", animation = last_animation(), path = '~')
+anim_save("canadadeathplot.gif", animation = last_animation(), path = '~')
 
 ###----------------------- POOLED VISUALIZATIONS of survival BY GENDER --------------------------- 
 
-### Number of Surviving females at age x 
+###------------Number of Female survivors at age x--------
 ##prepare data for plot 
 femalesurvivordata <- life_data_sep_avg[Element == "Number of survivors at age x (lx)" & Sex %in% c("F") & YEAR %in% seq(1980, 2016, 1)]
 femalesurvivordata
@@ -98,16 +97,19 @@ femalesurvivalplot <- ggplot(femalesurvivordata, aes(Age_group, AVG_VALUE, color
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_color_hue()+
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors (F)') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
-#view 
-femalesurvivalplot
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Female Survival Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors', color = "Province") 
 
+##view 
+femalesurvivalfinal
 ##save the plot 
-anim_save("gganimfsurvivorplot.gif", animation = last_animation(), path = '~')
+anim_save("femalesurvivorplot.gif", animation = last_animation(), path = '~')
 
-### Number of Surviving males at age x 
+
+###------------Number of Male survivors at age x--------
 ##prepare data for plot 
 malesurvivordata <- life_data_sep_avg[Element == "Number of survivors at age x (lx)" & Sex %in% c("M") & YEAR %in% seq(1980, 2016, 1)]
 malesurvivordata
@@ -118,55 +120,57 @@ malesurvivalplot <- ggplot(malesurvivordata, aes(Age_group, AVG_VALUE, color = G
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_color_hue()+
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors (M)') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Male Survival Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Survivors', color = "Province") 
+
 #view 
 malesurvivalplot
 
 ##save the plot 
-anim_save("gganimmsurvivorplot.gif", animation = last_animation(), path = '~')
+anim_save("malesurvivorplot.gif", animation = last_animation(), path = '~')
 
 ###------------------------- POOLED VISUALIZATIONS OF DEATH BY GENDER -------------------------- 
-###Number of deaths for females 
+
+###------------Number of Female Deaths--------
 ##prepare the data 
 femaledeathdata <- life_data_sep_avg[Element == "Number of deaths between age x and x+1 (dx)" & Sex %in% c("F") & YEAR %in% seq(1980, 2016, 1)]
 femaledeathdata
-
 ##generate plot
 femaledeathplot <- ggplot(femaledeathdata, aes(Age_group, AVG_VALUE, color = GEO)) +
   geom_point(alpha = 0.6, size = 2, show.legend = TRUE) + 
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_color_hue()+
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths (F)') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
-
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Female Death Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths', color = "Province") 
 #view
 femaledeathplot
-
 ##save the plot 
-anim_save("gganimfemaledeathplot.gif", animation = last_animation(), path = '~')
+anim_save("femaledeathplot.gif", animation = last_animation(), path = '~')
 
-###Number of deaths for males 
+###------------Number of Male Deaths--------
 ##prepare the data 
 maledeathdata <- life_data_sep_avg[Element == "Number of deaths between age x and x+1 (dx)" & Sex %in% c("M") & YEAR %in% seq(1980, 2016, 1)]
 maledeathdata
-
 ##generate plot 
 maledeathplot <- ggplot(maledeathdata, aes(Age_group, AVG_VALUE, color = GEO)) +
   geom_point(alpha = 0.6, size = 2, show.legend = TRUE) + 
   scale_x_continuous(breaks = c(0, seq(20,120,20)), limits = c(0, 120)) + 
   scale_y_continuous(breaks = c(0, seq(10000, 100000, 10000))) + 
   scale_color_hue()+
-  labs(titles = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths (M)') + 
-  transition_time(YEAR)+
-  ease_aes('linear')
-
+  theme_set(theme_bw()) + 
+  theme(title = titleformat, axis.text = labelformat) + 
+  transition_time(YEAR) +
+  ease_aes('linear')+
+  labs(title = "Canadian Male Death Rates Across Time", subtitle = 'Year: {frame_time}', x = 'Age', y = 'Number of Deaths', color = "Province") 
 ##view 
 maledeathplot
-
 ##save the plot 
 anim_save("gganimmaledeathplot.gif", animation = last_animation(), path = '~')
 
