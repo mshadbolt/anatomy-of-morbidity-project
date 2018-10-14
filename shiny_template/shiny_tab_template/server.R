@@ -26,17 +26,17 @@ server <- function(input, output) {
             fontsize.title = 14 #Change the font size of the title
             )
   })
-  
-  output$plot_cause_new <- renderGvis({
+
+  my_func <- function(gender){
     year_input <- input$year
-    sex_input <- input$sex
+    sex_input <- gender
     age_input <- input$age
     
     filtered_tree_data <- tree_data %>%
       filter(year == year_input,
              Sex == sex_input,
              age_factor == age_input)
-
+    
     # Create a new row for the parent
     # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
     
@@ -67,10 +67,58 @@ server <- function(input, output) {
         highlightOnMouseOver=TRUE,
         fontFamily="system-ui",
         generateTooltip = "function(row, size, value) { 
-                              return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
-    }"
+        return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+  }"
       )
-    )
+      )
+  }
+
+  
+    
+  output$plot_cause_new <- renderGvis({
+    my_func(input$sex)
+    # year_input <- input$year
+    # sex_input <- input$sex
+    # age_input <- input$age
+    # 
+    # filtered_tree_data <- tree_data %>%
+    #   filter(year == year_input,
+    #          Sex == sex_input,
+    #          age_factor == age_input)
+    # 
+    # # Create a new row for the parent
+    # # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    # 
+    # filtered_tree_data_add <- tibble(
+    #   cause=c("Number of deaths"),
+    #   Characteristics=c(NA),
+    #   value_plus=c(1), #sum(tree_data$value_plus),
+    #   cause_id=c(NA),
+    #   Sex=c(NA),
+    #   year=c(NA),
+    #   age_factor = c(NA),
+    #   total_deaths = c(NA)
+    # )
+    # 
+    # # Join the dataframes
+    # filtered_tree_data <- bind_rows(filtered_tree_data, filtered_tree_data_add)
+    # 
+    # gvisTreeMap(
+    #   filtered_tree_data,
+    #   "cause",
+    #   "Characteristics",
+    #   "value_plus",
+    #   "cause_id",
+    #   options=list(
+    #     minColor='#ee0979',
+    #     # midColor='#D76D77',
+    #     maxColor='#ff6a00',
+    #     highlightOnMouseOver=TRUE,
+    #     generateTooltip = "function(row, size, value) { 
+    #                           return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+    # }"
+    #   )
+    # )
   })
   
   output$death_total <- renderText({
@@ -88,11 +136,64 @@ server <- function(input, output) {
     
     paste("Total number of deaths: <b>", death_total,"</b>", sep = " ")
   })
+
+  output$plot_male1 <-renderGvis({
+    my_func("Males")
+  })
   
+  output$plot_female1 <-renderGvis({
+    my_func("Females")
+  })
+  
+  output$plot_male <-renderGvis({
+      year_input <- input$year
+      sex_input <-  "Males"
+      age_input <-  input$age
+    
+    filtered_tree_data <- tree_data %>%
+      filter(year == year_input,
+             Sex == sex_input,
+             age_factor == age_input)
+    
+    # Create a new row for the parent
+    # https://stackoverflow.com/questions/44399496/rstudio-treemap-idvar-does-not-match-parentvar
+    
+    filtered_tree_data_add <- tibble(
+      cause=c("Number of deaths"),
+      Characteristics=c(NA),
+      value_plus=c(1),
+      cause_id=c(NA),
+      Sex=c(NA),
+      year=c(NA),
+      age_factor = c(NA),
+      total_deaths = c(NA)
+    )
+    
+    # Join the dataframes
+    filtered_tree_data <- bind_rows(filtered_tree_data, filtered_tree_data_add)
+    
+    gvisTreeMap(
+      filtered_tree_data,
+      "cause",
+      "Characteristics",
+      "value_plus",
+      "cause_id",
+      options=list(
+        minColor='#ee0979',
+        # midColor='#D76D77',
+        maxColor='#ff6a00',
+        highlightOnMouseOver=TRUE,
+        generateTooltip = "function(row, size, value) { 
+                              return '<div style=\"background:#fd9; padding:10px; border-style:solid\">' + data.getValue(row, 3) + '</div>'; 
+    }"
+      )
+    )
+  })
+
   output$plot_male <- renderPlot({
-    year_input <- input$yearMF
+    year_input <- input$year
     sex_input <-  "Males"
-    age_input <-  input$ageMF
+    age_input <-  input$age
     
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
       filter(year == year_input,
@@ -110,9 +211,9 @@ server <- function(input, output) {
   })
   
   output$plot_female <- renderPlot({
-    year_input <- input$yearMF
+    year_input <- input$year
     sex_input <-  "Females"
-    age_input <-  input$ageMF
+    age_input <-  input$age
     
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
       filter(year == year_input,
