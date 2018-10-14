@@ -51,14 +51,14 @@ ui <- fluidPage(
             )),
     tabPanel("Males vs Females", 
              sidebarLayout(
-               sidebarPanel(selectInput(inputId = "age", 
+               sidebarPanel(selectInput(inputId = "ageMF", 
                                         label = "Age category", 
                                         choices = levels(cause_of_death_rates$age_factor), 
                                         selected = NULL, multiple = FALSE,
                                         selectize = TRUE, width = NULL, size = NULL),
                             # Input: Slider for the number of observations to generate ----
                             br(),
-                            sliderInput(inputId = "year",
+                            sliderInput(inputId = "yearMF",
                                         label = "Year:",
                                         value = 2000,
                                         min = min(cause_of_death_rates$year),
@@ -67,8 +67,9 @@ ui <- fluidPage(
                                         sep = ""),
                             width = 3
                ),
-               mainPanel(htmlOutput("plot_male1"),
+               mainPanel(#htmlOutput("plot_male1"),
                          htmlOutput("plot_female1"),
+                         htmlOutput("plot_male1"),
                          plotOutput("plot_female"),
                          p("This visualisation was created using a derivative of:  Table 13-10-0392 Deaths and age-specific mortality rates, by selected grouped causes"))
              )),

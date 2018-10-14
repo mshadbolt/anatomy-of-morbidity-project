@@ -27,10 +27,10 @@ server <- function(input, output) {
             )
   })
 
-  my_func <- function(gender){
-    year_input <- input$year
-    sex_input <- gender
-    age_input <- input$age
+  cause_of_death_treemap <- function(year, sex, age){
+    year_input <- year
+    sex_input <- sex
+    age_input <- age
     
     filtered_tree_data <- tree_data %>%
       filter(year == year_input,
@@ -91,21 +91,21 @@ server <- function(input, output) {
 
   
   output$plot_cause_new <- renderGvis({
-    my_func(input$sex)
+    cause_of_death_treemap(input$year,input$sex,input$age)
   })
   
   output$plot_male1 <-renderGvis({
-    my_func("Males")
+    cause_of_death_treemap(input$yearMF,"Males",input$ageMF)
   })
   
   output$plot_female1 <-renderGvis({
-    my_func("Females")
+    cause_of_death_treemap(input$yearMF,"Females",input$ageMF)
   })
   
   output$plot_female <- renderPlot({
-    year_input <- input$year
+    year_input <- input$yearMF
     sex_input <-  "Females"
-    age_input <-  input$age
+    age_input <-  input$ageMF
     
     filtered_cause_of_death_rates <- cause_of_death_rates %>%
       filter(year == year_input,
