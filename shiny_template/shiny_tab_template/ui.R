@@ -8,7 +8,7 @@ ui <- fluidPage(theme="shiny.css",
   
   # App title ----
   titlePanel("The Anatomy of Morbidity in Canada"),
-  p("The data in these visualisations is taken from the ", a("Deaths, causes of death and life expectancy, 2016 dataset ",
+  p("The data in these visualisations are from the ", a("Deaths, causes of death and life expectancy (2016)",
        href = "https://www150.statcan.gc.ca/n1/daily-quotidien/180628/dq180628b-eng.htm")),
   
   tabsetPanel(
@@ -17,7 +17,7 @@ ui <- fluidPage(theme="shiny.css",
              sidebarLayout(
                
                sidebarPanel(
-                 p("Relative proportions of different causes of death. Filter by sex, age group or year below."),
+                 p("Relative proportions of different causes of death. Filter by sex, age group or year."),
                  # Input: Select the random distribution type ----
                  radioButtons(inputId ="sex",
                               label ="Sex",
@@ -44,7 +44,7 @@ ui <- fluidPage(theme="shiny.css",
                              step = 1,
                              sep = ""),
                  width = 3,
-                 p("This visualisation was created using a derivative of: ",
+                 p("This visualisation was created using ",
                     a("Deaths and age-specific mortality rates, by selected grouped causes",
                       href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039201")
                    )
@@ -56,7 +56,10 @@ ui <- fluidPage(theme="shiny.css",
             )),
     tabPanel("Males vs Females", 
              sidebarLayout(
-               sidebarPanel(selectInput(inputId = "ageMF", 
+               sidebarPanel(
+                 
+                            p("Relative proportions of different causes of death across sexes. Filter by age group or year."),
+                            selectInput(inputId = "ageMF", 
                                         label = "Age category", 
                                         choices = levels(cause_of_death_rates$age_factor), 
                                         selected = NULL, multiple = FALSE,
@@ -70,7 +73,11 @@ ui <- fluidPage(theme="shiny.css",
                                         max = max(cause_of_death_rates$year), 
                                         step = 1,
                                         sep = ""),
-                            width = 3
+                            width = 3,
+                            p("This visualisation was created using ",
+                              a("Deaths and age-specific mortality rates, by selected grouped causes",
+                                href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039201")
+                            )
                ),
                mainPanel(plotOutput("plot_male"),
                          plotOutput("plot_female")
@@ -78,26 +85,39 @@ ui <- fluidPage(theme="shiny.css",
              )),
     tabPanel("Life Expectancy by Province", 
              sidebarLayout(
-               sidebarPanel(sliderInput(inputId = "year_province",
+               sidebarPanel(
+                            p("Average life expectancy at birth across different provinces. Filter by year or sex."),
+                            sliderInput(inputId = "year_province",
                                         label = "Year:",
                                         value = 1980,
                                         min = min(df$YEAR),
                                         max = max(df$YEAR), 
                                         step = 1,
                                         sep = ""),
-                            width = 3),
+                            
+                            width = 3,
+                            p("This visualization was created using ",
+                              a("Life expectancy and other elements of the life table, Canada, all provinces except Prince Edward Island",
+                                href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310011401"))
+               ),
                mainPanel(leafletOutput("plot_map")))),
     
     tabPanel("Life Expectancy in Canada",
              sidebarLayout(
-               sidebarPanel(sliderInput(inputId = "year_canada",
+               sidebarPanel(
+                            p("Average life expectancy at birth across different provinces, where lighter provinces are the ones that live longer. Filter by year."),
+                            sliderInput(inputId = "year_canada",
                                         label = "Year:",
                                         value = 1980,
                                         min = min(df$YEAR),
                                         max = max(df$YEAR), 
                                         step = 1,
                                         sep = ""),
-                            width = 3),
+                            width = 3,
+                            p("This visualization was created using ",
+                              a("Life expectancy and other elements of the life table, Canada, all provinces except Prince Edward Island",
+                                href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310011401"))
+                            ),
                mainPanel(leafletOutput("plot_map_canada"))
               ))
       
