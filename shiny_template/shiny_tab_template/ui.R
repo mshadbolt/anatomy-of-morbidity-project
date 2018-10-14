@@ -20,7 +20,7 @@ ui <- fluidPage(theme="shiny.css",
                  p("Relative proportions of different causes of death. Filter by sex, age group or year below."),
                  # Input: Select the random distribution type ----
                  radioButtons(inputId ="sex",
-                              label ="Sex:",
+                              label ="Sex",
                               c("Both sexes" = "Both sexes",
                                 "Male" = "Males",
                                 "Female" = "Females"),
@@ -37,7 +37,7 @@ ui <- fluidPage(theme="shiny.css",
                  # Input: Slider for the number of observations to generate ----
                  br(),
                  sliderInput(inputId = "year",
-                             label = "Year:",
+                             label = "Year",
                              value = 2000,
                              min = min(cause_of_death_rates$year),
                              max = max(cause_of_death_rates$year), 
@@ -76,14 +76,9 @@ ui <- fluidPage(theme="shiny.css",
                          plotOutput("plot_female")
                 )
              )),
-    tabPanel("Life by Province", 
+    tabPanel("Life Expectancy by Province", 
              sidebarLayout(
-               sidebarPanel(selectInput(inputId = "age", 
-                                        label = "Age category", 
-                                        choices = levels(df$Age_group), 
-                                        selected = NULL, multiple = FALSE,
-                                        selectize = TRUE, width = NULL, size = NULL),
-                            sliderInput(inputId = "year_map",
+               sidebarPanel(sliderInput(inputId = "year_province",
                                         label = "Year:",
                                         value = 1980,
                                         min = min(df$YEAR),
@@ -91,7 +86,21 @@ ui <- fluidPage(theme="shiny.css",
                                         step = 1,
                                         sep = ""),
                             width = 3),
-               mainPanel(leafletOutput("plot_map")))) #,
+               mainPanel(leafletOutput("plot_map")))),
+    
+    tabPanel("Life Expectancy in Canada",
+             sidebarLayout(
+               sidebarPanel(sliderInput(inputId = "year_canada",
+                                        label = "Year:",
+                                        value = 1980,
+                                        min = min(df$YEAR),
+                                        max = max(df$YEAR), 
+                                        step = 1,
+                                        sep = ""),
+                            width = 3),
+               mainPanel(leafletOutput("plot_map_canada"))
+              ))
+      
     #tabPanel("Summary", verbatimTextOutput("summary")),
     #tabPanel("Table", tableOutput("table")
   )

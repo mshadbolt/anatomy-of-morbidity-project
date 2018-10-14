@@ -129,7 +129,7 @@ server <- function(input, output) {
   })
   
   output$plot_map <- renderLeaflet({
-    year_input = input$year_map
+    year_input = input$year_province
     
     df <- df %>%
       filter(YEAR==year_input)
@@ -234,28 +234,52 @@ server <- function(input, output) {
         #overlayGroups = c("sfbdjsd", "sdbjskfdk"),
         options = layersControlOptions(collapsed = FALSE)
       )
+  })
+  
+  
+  output$plot_map_canada <- renderLeaflet({
+    year_input = input$year_canada
     
-    # leaflet() %>% 
-    #   # Disable movement, keep map static
-    #   leaflet(options = leafletOptions(zoomControl = FALSE,
-    #                                    minZoom = 3, maxZoom = 3,
-    #                                    dragging = FALSE)) %>%
-    #   addTiles() %>% 
-    #   setView(-110.09, 62.7,  zoom = 3) %>% 
-    #   addPolygons(data = subset(provinces, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Quebec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
-    #               # Province shading
-    #               fillColor = rainbow(14, alpha = NULL), stroke = FALSE,
-    #               weight = 1,
-    #               # Popup annotations
-    #               popup = "idk") %>%
-    #   # Checklist
-    #   addLayersControl(overlayGroups = c('idk',
-    #                                      'what',
-    #                                      'the',
-    #                                      'options',
-    #                                      'are'),
-    #                    options = layersControlOptions(collapsed = FALSE),
-    #                    position = 'topright')
+    df <- df %>%
+      filter(YEAR==year_input, Sex=="Both")
+    
+    provinces2  <- sp::merge(
+      provinces,
+      df,
+      by.x = "name",
+      by.y = "GEO",
+      sort = FALSE
+    )
+    
+    clear <- "#F2EFE9"
+    lineColor <- "#000000"
+    hoverColor <- "red"
+    lineWeight <- 0.5
+    pal <- colorNumeric(palette = 'Reds', c(max(df$AVG_VALUE), min(df$AVG_VALUE)), reverse = TRUE)
+    provinces2 %>% 
+      leaflet() %>% 
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 3, maxZoom = 3,
+                                       dragging = FALSE)) %>%
+      addTiles() %>% 
+      setView(-110.09, 62.7,  zoom = 3) %>% 
+      addPolygons(data = subset(provinces2, name %in% c("British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Ontario", "Québec", "New Brunswick", "Prince Edward Island", "Nova Scotia", "Newfoundland and Labrador", "Yukon", "Northwest Territories", "Nunavut")),
+                  fillColor = ~ pal(AVG_VALUE),
+                  fillOpacity = 0.5,
+                  stroke = TRUE,
+                  weight = lineWeight,
+                  color = lineColor,
+                  highlightOptions = highlightOptions(fillOpacity = 1, bringToFront = TRUE, sendToBack = TRUE),
+                  label=~stringr::str_c(
+                    name,' ',
+                    formatC(AVG_VALUE)),
+                  labelOptions= labelOptions(direction = 'auto')) %>%
+      # Add the checklist
+      addLegend(pal = pal, 
+                values = df$AVG_VALUE,
+                position = "bottomleft", 
+                title = "Life Expectancy",
+                labFormat = labelFormat(suffix = " Years"))
   })
   
   # Generate a summary of the data ----
