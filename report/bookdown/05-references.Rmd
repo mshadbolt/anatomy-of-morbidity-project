@@ -1,3 +1,9 @@
 `r if (knitr::is_html_output()) '
 # References {-}
 '`
+[1]. Canada's aging population will strain the health-care system  
+[2]. Caring for aging parents costs Canadians $33 billion a year — and it’s just going to get worse  
+[3]. Canada ‘woefully unprepared’ to deal with senior population surge, Senate committee hears  
+[4]. Roberts, K. C. et al. “Prevalence and Patterns of Chronic Disease Multimorbidity and Associated Determinants in Canada.” Health Promotion and Chronic Disease Prevention in Canada: Research, Policy and Practice 35.6 (2015): 87–94  
+
+
