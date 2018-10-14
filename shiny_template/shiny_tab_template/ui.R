@@ -69,7 +69,6 @@ ui <- fluidPage(
                ),
                mainPanel(htmlOutput("plot_male1"),
                          htmlOutput("plot_female1"),
-                         plotOutput("plot_male"),
                          plotOutput("plot_female"),
                          p("This visualisation was created using a derivative of:  Table 13-10-0392 Deaths and age-specific mortality rates, by selected grouped causes"))
              )),
