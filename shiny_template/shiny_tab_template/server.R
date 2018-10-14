@@ -33,9 +33,6 @@ server <- function(input, output) {
   output$plot_cause_new <- renderGvis({
     year_input <- input$year
     sex_input <- input$sex
-    if (length(sex_input > 1)) {
-      sex_input == "Both sexes"
-    }
     age_input <- input$age
     
     filtered_tree_data <- tree_data %>%

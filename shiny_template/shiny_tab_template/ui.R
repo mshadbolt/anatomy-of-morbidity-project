@@ -16,13 +16,16 @@ ui <- fluidPage(
              sidebarLayout(
                
                sidebarPanel(
+                 p("Relative proportions of different causes of death. The user can select which sex they are interested in, what age group and the year."),
                  # Input: Select the random distribution type ----
-                 checkboxGroupInput(inputId = "sex", 
-                                    label = "Sex:",
-                                    choices = list("Male" = "Males",
-                                                   "Female" = "Females"),
-                                    selected = "Males"),
-                 verbatimTextOutput("test"),
+                 radioButtons(inputId ="sex",
+                              label ="Sex:",
+                              c("Both sexes" = "Both sexes",
+                                "Male" = "Males",
+                                "Female" = "Females"),
+                              selected = "Both sexes",
+                              inline = FALSE,
+                              width = NULL),
                  # br() element to introduce extra vertical spacing ----
                  br(),
                  selectInput(inputId = "age", 
@@ -41,7 +44,6 @@ ui <- fluidPage(
                              sep = "")
                  ),
                  mainPanel(
-                   p("Relative proportions of different causes of death. The user can select which sex they are interested in, what age group and the year."),
                    htmlOutput("plot_cause_new"),
                    p("This visualisation was created using a derivative of:  Table  13-10-0392-01   Deaths and age-specific mortality rates, by selected grouped causes")
                )
