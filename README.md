@@ -17,7 +17,7 @@ Our hypothesis-driven solution enables interactive visualizations so that the in
 How does death approach?  
 When will you run out of time?  
 Hacking shows the way   
-- Marion Shadbolt    
+-Marion Shadbolt    
 
 
 ## Schedule
