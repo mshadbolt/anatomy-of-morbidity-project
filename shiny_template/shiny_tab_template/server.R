@@ -172,7 +172,7 @@ server <- function(input, output) {
     lineColor <- "#000000"
     hoverColor <- "red"
     lineWeight <- 0.5
-    pal <- colorNumeric(palette = 'Spectral', c(max(df$AVG_VALUE), min(df$AVG_VALUE)), reverse = TRUE)
+    pal <- colorNumeric(palette = 'inferno', c(max(df$AVG_VALUE), min(df$AVG_VALUE)), reverse = TRUE)
     
     
     leaflet() %>% 
