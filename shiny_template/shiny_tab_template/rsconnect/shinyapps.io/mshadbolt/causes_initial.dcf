@@ -1,0 +1,12 @@
+name: causes_initial
+title: causes_initial
+username:
+account: mshadbolt
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 512622
+bundleId: 1642168
+url: https://mshadbolt.shinyapps.io/causes_initial/
+when: 1539531764.42936
+asMultiple: FALSE
+asStatic: FALSE
