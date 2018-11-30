@@ -1,0 +1,16 @@
+# Methods {#methods}
+
+This is a test to create a methods rMarkdown
+
+## Data cleaning
+
+
+
+
+
+## Data exploration
+
+
+
+
+## Visualisation selection
