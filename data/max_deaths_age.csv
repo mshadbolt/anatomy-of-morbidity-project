@@ -1,0 +1,741 @@
+"GEO","Sex","YEAR","Avg_age"
+"Alberta","F",1980,87
+"Alberta","F",1981,87
+"Alberta","F",1982,87
+"Alberta","F",1983,88
+"Alberta","F",1984,88
+"Alberta","F",1985,88
+"Alberta","F",1993,88
+"Alberta","F",1992,88
+"Alberta","F",1986,90.5
+"Alberta","F",1994,88
+"Alberta","F",1991,88
+"Alberta","F",1989,88
+"Alberta","F",1990,87
+"Alberta","F",1988,88
+"Alberta","F",1987,88
+"Alberta","F",1995,88
+"Alberta","F",1996,88
+"Alberta","F",1997,88
+"Alberta","F",1998,89
+"Alberta","F",1999,89
+"Alberta","F",2000,89
+"Alberta","F",2001,89
+"Alberta","F",2002,89
+"Alberta","F",2003,89
+"Alberta","F",2004,90
+"Alberta","F",2005,90
+"Alberta","F",2006,90
+"Alberta","F",2007,90
+"Alberta","F",2008,90
+"Alberta","F",2015,91
+"Alberta","F",2016,91
+"Alberta","F",2014,91
+"Alberta","F",2009,90
+"Alberta","F",2013,91
+"Alberta","F",2010,90
+"Alberta","F",2012,91
+"Alberta","F",2011,91
+"Alberta","M",1980,79
+"Alberta","M",1981,80
+"Alberta","M",1982,86
+"Alberta","M",1983,80.5
+"Alberta","M",1984,80
+"Alberta","M",1985,81
+"Alberta","M",1986,82.5
+"Alberta","M",1987,81
+"Alberta","M",1988,81
+"Alberta","M",1989,81
+"Alberta","M",1990,82
+"Alberta","M",1991,82
+"Alberta","M",1992,82
+"Alberta","M",1993,82
+"Alberta","M",1994,82
+"Alberta","M",1995,82.5
+"Alberta","M",1996,83
+"Alberta","M",1997,83
+"Alberta","M",2000,84
+"Alberta","M",1998,83.5
+"Alberta","M",1999,83.5
+"Alberta","M",2001,84
+"Alberta","M",2002,85
+"Alberta","M",2003,85
+"Alberta","M",2004,85
+"Alberta","M",2005,85
+"Alberta","M",2006,86
+"Alberta","M",2007,86
+"Alberta","M",2008,86
+"Alberta","M",2009,86
+"Alberta","M",2010,86.5
+"Alberta","M",2011,87
+"Alberta","M",2013,87
+"Alberta","M",2015,87
+"Alberta","M",2014,87
+"Alberta","M",2012,87
+"Alberta","M",2016,87
+"British Columbia","F",1980,88
+"British Columbia","F",1981,88
+"British Columbia","F",1982,88
+"British Columbia","F",1983,88
+"British Columbia","F",1984,88
+"British Columbia","F",1985,88
+"British Columbia","F",1986,87.5
+"British Columbia","F",1987,88
+"British Columbia","F",1989,88
+"British Columbia","F",1988,88
+"British Columbia","F",1990,88
+"British Columbia","F",1991,88
+"British Columbia","F",1992,88
+"British Columbia","F",1993,88
+"British Columbia","F",1994,88
+"British Columbia","F",1995,89
+"British Columbia","F",1996,89
+"British Columbia","F",1997,89
+"British Columbia","F",1998,89
+"British Columbia","F",1999,89
+"British Columbia","F",2000,89
+"British Columbia","F",2001,89
+"British Columbia","F",2002,89
+"British Columbia","F",2003,90
+"British Columbia","F",2004,90
+"British Columbia","F",2005,90
+"British Columbia","F",2016,91
+"British Columbia","F",2015,91
+"British Columbia","F",2006,90
+"British Columbia","F",2009,90
+"British Columbia","F",2014,91
+"British Columbia","F",2007,90
+"British Columbia","F",2008,90
+"British Columbia","F",2010,91
+"British Columbia","F",2011,91
+"British Columbia","F",2013,91
+"British Columbia","F",2012,91
+"British Columbia","M",1980,80
+"British Columbia","M",1981,81
+"British Columbia","M",1982,81
+"British Columbia","M",1983,81
+"British Columbia","M",1984,82.5
+"British Columbia","M",1985,81
+"British Columbia","M",1986,81
+"British Columbia","M",1987,82
+"British Columbia","M",1988,82
+"British Columbia","M",1989,82
+"British Columbia","M",1990,82
+"British Columbia","M",1991,83
+"British Columbia","M",1992,83
+"British Columbia","M",1993,83
+"British Columbia","M",1994,83
+"British Columbia","M",1995,83
+"British Columbia","M",1996,84
+"British Columbia","M",1997,84
+"British Columbia","M",1998,84
+"British Columbia","M",1999,85
+"British Columbia","M",2000,85
+"British Columbia","M",2001,85
+"British Columbia","M",2002,85
+"British Columbia","M",2003,86
+"British Columbia","M",2004,86
+"British Columbia","M",2005,86
+"British Columbia","M",2006,87
+"British Columbia","M",2016,88
+"British Columbia","M",2015,88
+"British Columbia","M",2007,87.3333333333333
+"British Columbia","M",2014,88
+"British Columbia","M",2013,88
+"British Columbia","M",2008,87
+"British Columbia","M",2012,88
+"British Columbia","M",2009,87
+"British Columbia","M",2011,88
+"British Columbia","M",2010,88
+"Canada","F",1980,88.5
+"Canada","F",1981,86.5
+"Canada","F",1982,87
+"Canada","F",1983,85.5
+"Canada","F",1984,87
+"Canada","F",1985,87
+"Canada","F",1986,87
+"Canada","F",1987,87
+"Canada","F",1988,87
+"Canada","F",1989,87
+"Canada","F",1990,91
+"Canada","F",1991,88.5
+"Canada","F",1992,86.5
+"Canada","F",1993,88
+"Canada","F",1994,88
+"Canada","F",1995,88
+"Canada","F",1996,88
+"Canada","F",1997,88
+"Canada","F",1998,88
+"Canada","F",1999,88
+"Canada","F",2000,88
+"Canada","F",2001,89
+"Canada","F",2002,89
+"Canada","F",2003,89
+"Canada","F",2004,89
+"Canada","F",2005,89
+"Canada","F",2006,90
+"Canada","F",2007,90
+"Canada","F",2016,91
+"Canada","F",2008,90
+"Canada","F",2015,91
+"Canada","F",2014,91
+"Canada","F",2009,90
+"Canada","F",2010,90
+"Canada","F",2013,91
+"Canada","F",2012,90
+"Canada","F",2011,90
+"Canada","M",1980,78.5
+"Canada","M",1981,79
+"Canada","M",1982,79
+"Canada","M",1983,79
+"Canada","M",1984,79
+"Canada","M",1985,79
+"Canada","M",1986,79
+"Canada","M",1987,80
+"Canada","M",1988,80
+"Canada","M",1989,80
+"Canada","M",1990,80
+"Canada","M",1991,81
+"Canada","M",1992,81
+"Canada","M",1993,81
+"Canada","M",1994,81
+"Canada","M",1995,82
+"Canada","M",1996,82
+"Canada","M",1997,82
+"Canada","M",1998,82
+"Canada","M",1999,83
+"Canada","M",2000,83
+"Canada","M",2001,84
+"Canada","M",2002,84
+"Canada","M",2003,84
+"Canada","M",2004,85
+"Canada","M",2005,85
+"Canada","M",2006,85
+"Canada","M",2007,85.5
+"Canada","M",2008,86
+"Canada","M",2009,86
+"Canada","M",2010,86
+"Canada","M",2016,87
+"Canada","M",2015,87
+"Canada","M",2011,87
+"Canada","M",2014,87
+"Canada","M",2013,87
+"Canada","M",2012,87
+"Manitoba","F",1981,87
+"Manitoba","F",1980,87
+"Manitoba","F",1982,87
+"Manitoba","F",1983,90
+"Manitoba","F",1984,88
+"Manitoba","F",1994,88.5
+"Manitoba","F",1990,88
+"Manitoba","F",1989,88
+"Manitoba","F",1985,88
+"Manitoba","F",1988,88
+"Manitoba","F",1987,88
+"Manitoba","F",1995,88
+"Manitoba","F",1991,88
+"Manitoba","F",1992,88
+"Manitoba","F",1986,87.6666666666667
+"Manitoba","F",1993,87.6666666666667
+"Manitoba","F",1996,88
+"Manitoba","F",1998,87.3333333333333
+"Manitoba","F",1997,88
+"Manitoba","F",1999,88
+"Manitoba","F",2000,88
+"Manitoba","F",2001,88
+"Manitoba","F",2002,88
+"Manitoba","F",2003,89
+"Manitoba","F",2004,90.5
+"Manitoba","F",2008,89
+"Manitoba","F",2009,90
+"Manitoba","F",2007,89
+"Manitoba","F",2005,89
+"Manitoba","F",2006,89
+"Manitoba","F",2016,90
+"Manitoba","F",2010,90
+"Manitoba","F",2015,90
+"Manitoba","F",2014,90
+"Manitoba","F",2011,90
+"Manitoba","F",2013,90
+"Manitoba","F",2012,90
+"Manitoba","M",1980,79
+"Manitoba","M",1981,79
+"Manitoba","M",1982,79
+"Manitoba","M",1983,80
+"Manitoba","M",1984,80
+"Manitoba","M",1985,80
+"Manitoba","M",1986,80
+"Manitoba","M",1987,79.5
+"Manitoba","M",1988,80
+"Manitoba","M",1989,79.5
+"Manitoba","M",1992,80
+"Manitoba","M",1991,81
+"Manitoba","M",1993,81
+"Manitoba","M",1990,81
+"Manitoba","M",1994,81
+"Manitoba","M",1995,81.5
+"Manitoba","M",1996,81.5
+"Manitoba","M",1997,82
+"Manitoba","M",1999,82
+"Manitoba","M",2000,82
+"Manitoba","M",1998,82
+"Manitoba","M",2001,83
+"Manitoba","M",2002,83
+"Manitoba","M",2006,84
+"Manitoba","M",2005,84
+"Manitoba","M",2007,85
+"Manitoba","M",2004,84
+"Manitoba","M",2003,83
+"Manitoba","M",2008,85
+"Manitoba","M",2009,85
+"Manitoba","M",2011,85.5
+"Manitoba","M",2010,85
+"Manitoba","M",2012,86
+"Manitoba","M",2013,86
+"Manitoba","M",2014,86
+"Manitoba","M",2016,86
+"Manitoba","M",2015,86
+"New Brunswick","F",1980,86
+"New Brunswick","F",1981,86
+"New Brunswick","F",1982,86
+"New Brunswick","F",1983,86
+"New Brunswick","F",1984,87
+"New Brunswick","F",1985,89.5
+"New Brunswick","F",1986,86.5
+"New Brunswick","F",1987,87
+"New Brunswick","F",1989,87
+"New Brunswick","F",1990,87
+"New Brunswick","F",1988,87
+"New Brunswick","F",1991,87
+"New Brunswick","F",1992,88
+"New Brunswick","F",1994,87
+"New Brunswick","F",1995,87
+"New Brunswick","F",1993,88
+"New Brunswick","F",1996,87
+"New Brunswick","F",1997,88
+"New Brunswick","F",2000,88
+"New Brunswick","F",2001,88
+"New Brunswick","F",1998,88
+"New Brunswick","F",1999,88
+"New Brunswick","F",2002,90
+"New Brunswick","F",2003,88
+"New Brunswick","F",2016,90
+"New Brunswick","F",2006,89
+"New Brunswick","F",2005,89
+"New Brunswick","F",2004,88
+"New Brunswick","F",2007,89
+"New Brunswick","F",2015,90
+"New Brunswick","F",2014,90
+"New Brunswick","F",2008,89
+"New Brunswick","F",2009,89
+"New Brunswick","F",2010,89
+"New Brunswick","F",2013,90
+"New Brunswick","F",2012,90
+"New Brunswick","F",2011,90
+"New Brunswick","M",1980,78
+"New Brunswick","M",1981,78
+"New Brunswick","M",1982,78
+"New Brunswick","M",1983,78
+"New Brunswick","M",1984,78
+"New Brunswick","M",1985,79
+"New Brunswick","M",1986,79
+"New Brunswick","M",1991,80
+"New Brunswick","M",1987,79
+"New Brunswick","M",1992,83.6666666666667
+"New Brunswick","M",1990,80
+"New Brunswick","M",1988,79
+"New Brunswick","M",1993,80
+"New Brunswick","M",1989,80
+"New Brunswick","M",1994,80
+"New Brunswick","M",1995,80
+"New Brunswick","M",1996,81
+"New Brunswick","M",1997,81
+"New Brunswick","M",1999,82
+"New Brunswick","M",1998,81
+"New Brunswick","M",2000,82
+"New Brunswick","M",2001,82
+"New Brunswick","M",2002,83
+"New Brunswick","M",2003,83
+"New Brunswick","M",2004,84
+"New Brunswick","M",2007,85
+"New Brunswick","M",2005,84
+"New Brunswick","M",2008,85
+"New Brunswick","M",2006,84
+"New Brunswick","M",2009,85
+"New Brunswick","M",2010,86
+"New Brunswick","M",2011,86.5
+"New Brunswick","M",2012,86
+"New Brunswick","M",2016,86
+"New Brunswick","M",2013,86
+"New Brunswick","M",2014,86
+"New Brunswick","M",2015,86
+"Newfoundland and Labrador","F",1980,84
+"Newfoundland and Labrador","F",1981,85
+"Newfoundland and Labrador","F",1982,85
+"Newfoundland and Labrador","F",1986,85
+"Newfoundland and Labrador","F",1985,85
+"Newfoundland and Labrador","F",1983,85
+"Newfoundland and Labrador","F",1984,85
+"Newfoundland and Labrador","F",1987,85
+"Newfoundland and Labrador","F",1988,85
+"Newfoundland and Labrador","F",1989,85
+"Newfoundland and Labrador","F",1990,85
+"Newfoundland and Labrador","F",1991,85
+"Newfoundland and Labrador","F",1993,85
+"Newfoundland and Labrador","F",1995,86
+"Newfoundland and Labrador","F",1992,85
+"Newfoundland and Labrador","F",1994,86
+"Newfoundland and Labrador","F",1996,86
+"Newfoundland and Labrador","F",1997,86
+"Newfoundland and Labrador","F",1998,86
+"Newfoundland and Labrador","F",1999,86
+"Newfoundland and Labrador","F",2000,86
+"Newfoundland and Labrador","F",2001,87
+"Newfoundland and Labrador","F",2002,87
+"Newfoundland and Labrador","F",2003,87
+"Newfoundland and Labrador","F",2004,87
+"Newfoundland and Labrador","F",2005,87
+"Newfoundland and Labrador","F",2006,87
+"Newfoundland and Labrador","F",2007,89
+"Newfoundland and Labrador","F",2013,88
+"Newfoundland and Labrador","F",2014,88
+"Newfoundland and Labrador","F",2012,89
+"Newfoundland and Labrador","F",2015,88.5
+"Newfoundland and Labrador","F",2016,88
+"Newfoundland and Labrador","F",2008,88
+"Newfoundland and Labrador","F",2011,89
+"Newfoundland and Labrador","F",2009,88
+"Newfoundland and Labrador","F",2010,89
+"Newfoundland and Labrador","M",1981,78
+"Newfoundland and Labrador","M",1982,78
+"Newfoundland and Labrador","M",1983,81.5
+"Newfoundland and Labrador","M",1980,79.6666666666667
+"Newfoundland and Labrador","M",1984,78
+"Newfoundland and Labrador","M",1985,78
+"Newfoundland and Labrador","M",1992,80
+"Newfoundland and Labrador","M",1986,78
+"Newfoundland and Labrador","M",1993,79
+"Newfoundland and Labrador","M",1988,79
+"Newfoundland and Labrador","M",1991,78
+"Newfoundland and Labrador","M",1989,79
+"Newfoundland and Labrador","M",1990,79
+"Newfoundland and Labrador","M",1987,79
+"Newfoundland and Labrador","M",1994,79
+"Newfoundland and Labrador","M",1995,80
+"Newfoundland and Labrador","M",1996,80
+"Newfoundland and Labrador","M",2001,81
+"Newfoundland and Labrador","M",2000,80
+"Newfoundland and Labrador","M",2002,83.5
+"Newfoundland and Labrador","M",1999,80
+"Newfoundland and Labrador","M",1997,80
+"Newfoundland and Labrador","M",2003,82
+"Newfoundland and Labrador","M",1998,80
+"Newfoundland and Labrador","M",2004,82
+"Newfoundland and Labrador","M",2005,82
+"Newfoundland and Labrador","M",2009,84
+"Newfoundland and Labrador","M",2006,82
+"Newfoundland and Labrador","M",2015,84
+"Newfoundland and Labrador","M",2007,82
+"Newfoundland and Labrador","M",2008,83
+"Newfoundland and Labrador","M",2016,84.5
+"Newfoundland and Labrador","M",2014,84
+"Newfoundland and Labrador","M",2013,84
+"Newfoundland and Labrador","M",2010,84
+"Newfoundland and Labrador","M",2011,84
+"Newfoundland and Labrador","M",2012,84
+"Nova Scotia","F",1980,85
+"Nova Scotia","F",1982,86
+"Nova Scotia","F",1983,86
+"Nova Scotia","F",1981,86
+"Nova Scotia","F",1984,86
+"Nova Scotia","F",1985,86
+"Nova Scotia","F",1986,86
+"Nova Scotia","F",1987,86
+"Nova Scotia","F",1988,86
+"Nova Scotia","F",1989,86
+"Nova Scotia","F",1990,86
+"Nova Scotia","F",1991,85.5
+"Nova Scotia","F",1992,87
+"Nova Scotia","F",1993,87
+"Nova Scotia","F",1994,87
+"Nova Scotia","F",1995,87
+"Nova Scotia","F",1996,87
+"Nova Scotia","F",1997,87
+"Nova Scotia","F",1998,87
+"Nova Scotia","F",1999,87
+"Nova Scotia","F",2000,87
+"Nova Scotia","F",2010,89
+"Nova Scotia","F",2001,87
+"Nova Scotia","F",2011,89
+"Nova Scotia","F",2009,88
+"Nova Scotia","F",2002,88
+"Nova Scotia","F",2012,89
+"Nova Scotia","F",2008,89
+"Nova Scotia","F",2003,88
+"Nova Scotia","F",2007,89
+"Nova Scotia","F",2013,89
+"Nova Scotia","F",2006,88
+"Nova Scotia","F",2016,89
+"Nova Scotia","F",2014,89
+"Nova Scotia","F",2005,88
+"Nova Scotia","F",2004,88
+"Nova Scotia","F",2015,89
+"Nova Scotia","M",1980,81
+"Nova Scotia","M",1981,77
+"Nova Scotia","M",1982,78
+"Nova Scotia","M",1983,78
+"Nova Scotia","M",1984,78
+"Nova Scotia","M",1985,79.5
+"Nova Scotia","M",1986,78
+"Nova Scotia","M",1990,79
+"Nova Scotia","M",1991,79
+"Nova Scotia","M",1987,78.5
+"Nova Scotia","M",1989,78.5
+"Nova Scotia","M",1988,78
+"Nova Scotia","M",1992,79
+"Nova Scotia","M",1993,80
+"Nova Scotia","M",1994,80
+"Nova Scotia","M",1995,80
+"Nova Scotia","M",1996,81
+"Nova Scotia","M",1997,81
+"Nova Scotia","M",1998,81
+"Nova Scotia","M",1999,82
+"Nova Scotia","M",2000,82
+"Nova Scotia","M",2001,82.5
+"Nova Scotia","M",2002,83
+"Nova Scotia","M",2016,85.5
+"Nova Scotia","M",2003,84.5
+"Nova Scotia","M",2015,85
+"Nova Scotia","M",2014,84.5
+"Nova Scotia","M",2004,83
+"Nova Scotia","M",2013,85
+"Nova Scotia","M",2012,85
+"Nova Scotia","M",2011,85
+"Nova Scotia","M",2005,83
+"Nova Scotia","M",2010,85
+"Nova Scotia","M",2009,85
+"Nova Scotia","M",2006,84
+"Nova Scotia","M",2008,84
+"Nova Scotia","M",2007,84
+"Ontario","F",1980,86
+"Ontario","F",1981,86
+"Ontario","F",1982,86
+"Ontario","F",1983,86
+"Ontario","F",1984,86
+"Ontario","F",1985,87
+"Ontario","F",1986,87
+"Ontario","F",1987,87
+"Ontario","F",1988,87
+"Ontario","F",1989,87
+"Ontario","F",1990,87
+"Ontario","F",1991,86
+"Ontario","F",1992,87
+"Ontario","F",1993,87.5
+"Ontario","F",1994,88
+"Ontario","F",1995,88
+"Ontario","F",1996,88
+"Ontario","F",1997,88
+"Ontario","F",1998,88
+"Ontario","F",1999,89
+"Ontario","F",2000,88
+"Ontario","F",2001,89
+"Ontario","F",2002,89
+"Ontario","F",2003,89
+"Ontario","F",2004,89
+"Ontario","F",2005,89
+"Ontario","F",2006,90
+"Ontario","F",2007,89.5
+"Ontario","F",2008,90
+"Ontario","F",2009,90
+"Ontario","F",2016,91
+"Ontario","F",2010,90
+"Ontario","F",2011,91
+"Ontario","F",2015,91
+"Ontario","F",2014,91
+"Ontario","F",2012,91
+"Ontario","F",2013,91
+"Ontario","M",1980,78
+"Ontario","M",1981,83
+"Ontario","M",1982,79
+"Ontario","M",1983,79
+"Ontario","M",1984,79.6666666666667
+"Ontario","M",1985,79
+"Ontario","M",1986,79
+"Ontario","M",1987,79.5
+"Ontario","M",1990,80
+"Ontario","M",1991,81
+"Ontario","M",1989,80
+"Ontario","M",1988,80
+"Ontario","M",1992,81
+"Ontario","M",1993,81
+"Ontario","M",1994,81
+"Ontario","M",1995,82
+"Ontario","M",1996,82
+"Ontario","M",1997,82
+"Ontario","M",1998,83
+"Ontario","M",1999,83
+"Ontario","M",2000,83
+"Ontario","M",2001,84
+"Ontario","M",2002,84
+"Ontario","M",2003,85
+"Ontario","M",2004,85
+"Ontario","M",2005,85
+"Ontario","M",2006,86
+"Ontario","M",2007,86
+"Ontario","M",2009,86
+"Ontario","M",2010,87
+"Ontario","M",2008,86
+"Ontario","M",2011,87
+"Ontario","M",2016,88
+"Ontario","M",2012,87
+"Ontario","M",2014,87
+"Ontario","M",2015,88
+"Ontario","M",2013,87
+"Quebec","F",1980,86
+"Quebec","F",1981,86
+"Quebec","F",1982,86
+"Quebec","F",1983,86
+"Quebec","F",1984,86
+"Quebec","F",1987,87
+"Quebec","F",1985,86.5
+"Quebec","F",1986,86
+"Quebec","F",1988,87
+"Quebec","F",1989,87
+"Quebec","F",1990,87
+"Quebec","F",1991,87
+"Quebec","F",1992,88
+"Quebec","F",1993,88
+"Quebec","F",1994,88
+"Quebec","F",1995,88
+"Quebec","F",1996,88
+"Quebec","F",1997,88
+"Quebec","F",1998,88
+"Quebec","F",1999,88
+"Quebec","F",2000,89
+"Quebec","F",2001,89
+"Quebec","F",2002,89
+"Quebec","F",2016,91
+"Quebec","F",2015,91
+"Quebec","F",2003,89.5
+"Quebec","F",2014,91
+"Quebec","F",2004,89
+"Quebec","F",2006,90
+"Quebec","F",2013,90
+"Quebec","F",2005,89
+"Quebec","F",2007,90
+"Quebec","F",2012,90
+"Quebec","F",2008,90
+"Quebec","F",2011,90
+"Quebec","F",2009,90
+"Quebec","F",2010,90
+"Quebec","M",1980,77
+"Quebec","M",1981,77
+"Quebec","M",1982,84.5
+"Quebec","M",1983,78
+"Quebec","M",1984,78
+"Quebec","M",1985,78
+"Quebec","M",1986,78.5
+"Quebec","M",1990,79
+"Quebec","M",1989,79
+"Quebec","M",1991,79
+"Quebec","M",1987,78
+"Quebec","M",1988,78
+"Quebec","M",1992,80
+"Quebec","M",1993,80
+"Quebec","M",1994,80
+"Quebec","M",1995,80
+"Quebec","M",1996,81
+"Quebec","M",1997,81
+"Quebec","M",1998,81
+"Quebec","M",1999,82
+"Quebec","M",2000,82
+"Quebec","M",2001,83
+"Quebec","M",2002,83
+"Quebec","M",2003,84
+"Quebec","M",2004,84
+"Quebec","M",2005,85
+"Quebec","M",2006,85
+"Quebec","M",2007,85
+"Quebec","M",2008,85
+"Quebec","M",2009,86
+"Quebec","M",2016,87
+"Quebec","M",2010,86
+"Quebec","M",2015,87
+"Quebec","M",2014,87
+"Quebec","M",2011,86
+"Quebec","M",2012,86
+"Quebec","M",2013,87
+"Saskatchewan","F",1980,88
+"Saskatchewan","F",1981,88
+"Saskatchewan","F",1982,88
+"Saskatchewan","F",1983,88
+"Saskatchewan","F",1993,89
+"Saskatchewan","F",1984,89
+"Saskatchewan","F",1992,87.5
+"Saskatchewan","F",1985,89
+"Saskatchewan","F",1994,89
+"Saskatchewan","F",1986,89
+"Saskatchewan","F",1991,89
+"Saskatchewan","F",1987,89
+"Saskatchewan","F",1995,89
+"Saskatchewan","F",1988,89
+"Saskatchewan","F",1989,89
+"Saskatchewan","F",1990,89.5
+"Saskatchewan","F",1996,89
+"Saskatchewan","F",1997,89
+"Saskatchewan","F",1998,89
+"Saskatchewan","F",1999,89
+"Saskatchewan","F",2000,89
+"Saskatchewan","F",2010,90
+"Saskatchewan","F",2009,90
+"Saskatchewan","F",2011,90
+"Saskatchewan","F",2015,90
+"Saskatchewan","F",2001,89
+"Saskatchewan","F",2014,90
+"Saskatchewan","F",2008,90
+"Saskatchewan","F",2013,90
+"Saskatchewan","F",2004,89
+"Saskatchewan","F",2005,89
+"Saskatchewan","F",2016,90
+"Saskatchewan","F",2002,89
+"Saskatchewan","F",2012,90
+"Saskatchewan","F",2003,89
+"Saskatchewan","F",2007,90
+"Saskatchewan","F",2006,90
+"Saskatchewan","M",1981,81
+"Saskatchewan","M",1980,81
+"Saskatchewan","M",1982,81
+"Saskatchewan","M",1983,81
+"Saskatchewan","M",1984,81
+"Saskatchewan","M",1986,82
+"Saskatchewan","M",1985,81
+"Saskatchewan","M",1987,82
+"Saskatchewan","M",1988,82
+"Saskatchewan","M",1989,87.3333333333333
+"Saskatchewan","M",1990,82
+"Saskatchewan","M",1994,82
+"Saskatchewan","M",1993,82
+"Saskatchewan","M",1991,82
+"Saskatchewan","M",1992,82
+"Saskatchewan","M",1995,83
+"Saskatchewan","M",1996,83
+"Saskatchewan","M",2000,83
+"Saskatchewan","M",1999,83
+"Saskatchewan","M",1998,83
+"Saskatchewan","M",2001,83
+"Saskatchewan","M",2002,83
+"Saskatchewan","M",1997,83
+"Saskatchewan","M",2003,84
+"Saskatchewan","M",2004,84
+"Saskatchewan","M",2005,85
+"Saskatchewan","M",2009,85
+"Saskatchewan","M",2006,85
+"Saskatchewan","M",2008,85
+"Saskatchewan","M",2010,86
+"Saskatchewan","M",2007,85
+"Saskatchewan","M",2016,86
+"Saskatchewan","M",2015,86
+"Saskatchewan","M",2014,86
+"Saskatchewan","M",2011,86
+"Saskatchewan","M",2013,86
+"Saskatchewan","M",2012,86

@@ -1,0 +1,235 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Deaths and age-specific mortality rates, by selected grouped causes",13100392,102-0551,"https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039201",1;2;18;27;28;29;30;31;32,"CURRENT - a cube available to the public and that is current",Annual,2000-01-01,2016-01-01,5
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+1,"Geography, place of residence",3;4,
+2,"Age at time of death",6;7;10,
+3,Sex,5,
+4,"Cause of death (ICD-10)",11;12;13,
+5,Characteristics,19;20;21;22;23;24;25,
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+1,"Canada, place of residence",11124,1,,,,
+2,"Age at time of death, all ages",,1,,,,
+2,"Age at time of death, under 1 year",,2,1,,8,
+2,"Age at time of death, 1 to 4 years",,3,1,,9,
+2,"Age at time of death, 5 to 9 years",,4,1,,,
+2,"Age at time of death, 10 to 14 years",,5,1,,,
+2,"Age at time of death, 15 to 19 years",,6,1,,,
+2,"Age at time of death, 20 to 24 years",,7,1,,,
+2,"Age at time of death, 25 to 29 years",,8,1,,,
+2,"Age at time of death, 30 to 34 years",,9,1,,,
+2,"Age at time of death, 35 to 39 years",,10,1,,,
+2,"Age at time of death, 40 to 44 years",,11,1,,,
+2,"Age at time of death, 45 to 49 years",,12,1,,,
+2,"Age at time of death, 50 to 54 years",,13,1,,,
+2,"Age at time of death, 55 to 59 years",,14,1,,,
+2,"Age at time of death, 60 to 64 years",,15,1,,,
+2,"Age at time of death, 65 to 69 years",,16,1,,,
+2,"Age at time of death, 70 to 74 years",,17,1,,,
+2,"Age at time of death, 75 to 79 years",,18,1,,,
+2,"Age at time of death, 80 to 84 years",,19,1,,,
+2,"Age at time of death, 85 to 89 years",,20,1,,,
+2,"Age at time of death, 90 years and over",,21,1,,,
+2,"Age at time of death, not stated",,22,1,,26,
+3,"Both sexes",,1,,,,
+3,Males,,2,1,,,
+3,Females,,3,1,,,
+4,"Total, all causes of death",A00-Y89,1,,,,
+4,"Salmonella infections",A01-A02,2,1,,,
+4,"Shigellosis and amoebiasis","A03, A06",3,1,,,
+4,"Certain other intestinal infections","A04, A07-A09",4,1,,,
+4,Tuberculosis,A16-A19,5,1,,,
+4,"Respiratory tuberculosis",A16,6,5,,,
+4,"Other tuberculosis",A17-A19,7,5,,,
+4,"Whooping cough",A37,8,1,,,
+4,"Scarlet fever and erysipelas","A38, A46",9,1,,,
+4,"Meningococcal infection",A39,10,1,,,
+4,Sepsis,A40-A41,11,1,,,
+4,Syphilis,A50-A53,12,1,,,
+4,"Acute poliomyelitis",A80,13,1,,,
+4,"Arthropod-borne viral encephalitis","A83-A84, A85.2",14,1,,,
+4,Measles,B05,15,1,,,
+4,"Viral hepatitis",B15-B19,16,1,,,
+4,"Human immunodeficiency virus [HIV] disease",B20-B24,17,1,,,
+4,Malaria,B50-B54,18,1,,,
+4,"Other and unspecified infectious and parasitic diseases and their sequelae",,19,1,,14,
+4,"Malignant neoplasms",C00-C97,20,1,,,
+4,"Malignant neoplasms of lip, oral cavity and pharynx",C00-C14,21,20,,,
+4,"Malignant neoplasm of oesophagus",C15,22,20,,,
+4,"Malignant neoplasm of stomach",C16,23,20,,,
+4,"Malignant neoplasms of colon, rectum and anus",C18-C21,24,20,,,
+4,"Malignant neoplasm of liver and intrahepatic bile ducts",C22,25,20,,,
+4,"Malignant neoplasm of pancreas",C25,26,20,,,
+4,"Malignant neoplasm of larynx",C32,27,20,,,
+4,"Malignant neoplasms of trachea, bronchus and lung",C33-C34,28,20,,,
+4,"Malignant melanoma of skin",C43,29,20,,,
+4,"Malignant neoplasm of breast",C50,30,20,,,
+4,"Malignant neoplasm of cervix uteri",C53,31,20,,,
+4,"Malignant neoplasms of corpus uteri and uterus, part unspecified",C54-C55,32,20,,,
+4,"Malignant neoplasm of ovary",C56,33,20,,,
+4,"Malignant neoplasm of prostate",C61,34,20,,,
+4,"Malignant neoplasms of kidney and renal pelvis",C64-C65,35,20,,,
+4,"Malignant neoplasm of bladder",C67,36,20,,,
+4,"Malignant neoplasms of meninges, brain and other parts of central nervous system",C70-C72,37,20,,,
+4,"Malignant neoplasms of lymphoid, haematopoietic and related tissue",C81-C96,38,20,,,
+4,"Hodgkin's disease",C81,39,38,,,
+4,"Non-Hodgkin's lymphoma",C82-C85,40,38,,,
+4,Leukaemia,C91-C95,41,38,,,
+4,"Multiple myeloma and immunoproliferative neoplasms","C88, C90",42,38,,,
+4,"Other and unspecified malignant neoplasms of lymphoid, haematopoietic and related tissue",C96,43,38,,,
+4,"All other and unspecified malignant neoplasms","C17, C23-C24, C26-C31, C37-C41, C44-C49, C51-C52, C57-C60, C62-C63, C66, C68-C69, C73-C80, C97",44,20,,,
+4,"In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behaviour",D00-D48,45,1,,,
+4,Anaemias,D50-D64,46,1,,,
+4,"Diabetes mellitus",E10-E14,47,1,,,
+4,"Nutritional deficiencies",E40-E64,48,1,,,
+4,Malnutrition,E40-E46,49,48,,,
+4,"Other nutritional deficiencies",E50-E64,50,48,,,
+4,Meningitis,"G00, G03",51,1,,,
+4,"Parkinson's disease",G20-G21,52,1,,,
+4,"Alzheimer's disease",G30,53,1,,,
+4,"Major cardiovascular diseases",I00-I78,54,1,,,
+4,"Diseases of heart","I00-I09, I11, I13, I20-I51",55,54,,,
+4,"Acute rheumatic fever and chronic rheumatic heart diseases",I00-I09,56,55,,,
+4,"Hypertensive heart disease",I11,57,55,,,
+4,"Hypertensive heart and renal disease",I13,58,55,,,
+4,"Ischaemic heart diseases",I20-I25,59,55,,,
+4,"Acute myocardial infarction",I21-I22,60,59,,,
+4,"Other acute ischaemic heart diseases",I24,61,59,,,
+4,"Other forms of chronic ischaemic heart disease","I20, I25",62,59,,,
+4,"Atherosclerotic cardiovascular disease, so described",I25.0,63,62,,,
+4,"All other forms of chronic ischaemic heart disease","I20, I25.1-I25.9",64,62,,,
+4,"Other heart diseases",I26-I51,65,55,,,
+4,"Acute and subacute endocarditis",I33,66,65,,,
+4,"Diseases of pericardium and acute myocarditis","I30-I31, I40",67,65,,,
+4,"Heart failure",I50,68,65,,,
+4,"All other forms of heart disease","I26-I28, I34-I38, I42-I49, I51",69,65,,,
+4,"Essential hypertension and hypertensive renal disease","I10, I12, I15",70,54,,,
+4,"Cerebrovascular diseases",I60-I69,71,54,,,
+4,Atherosclerosis,I70,72,54,,,
+4,"Other diseases of circulatory system",I71-I78,73,54,,,
+4,"Aortic aneurysm and dissection",I71,74,73,,,
+4,"Other diseases of arteries, arterioles and capillaries",I72-I78,75,73,,,
+4,"Other disorders of circulatory system",I80-I99,76,1,,,
+4,"Influenza and pneumonia",J09-J18,77,1,,,
+4,Influenza,J09-J11,78,77,,,
+4,Pneumonia,J12-J18,79,77,,,
+4,"Other acute lower respiratory infections",J20-J22,80,1,,,
+4,"Acute bronchitis and bronchiolitis",J20-J21,81,80,,,
+4,"Unspecified acute lower respiratory infection",J22,82,80,,,
+4,"Chronic lower respiratory diseases",J40-J47,83,1,,,
+4,"Bronchitis, chronic and unspecified",J40-J42,84,83,,,
+4,Emphysema,J43,85,83,,,
+4,Asthma,J45-J46,86,83,,,
+4,"Other chronic lower respiratory diseases","J44, J47",87,83,,,
+4,"Pneumoconioses and chemical effects","J60-J66, J68",88,1,,,
+4,"Pneumonitis due to solids and liquids",J69,89,1,,,
+4,"Other diseases of respiratory system","J00-J06, J30-J39, J67, J70-J98",90,1,,,
+4,"Peptic ulcer",K25-K28,91,1,,,
+4,"Diseases of appendix",K35-K38,92,1,,,
+4,Hernia,K40-K46,93,1,,,
+4,"Chronic liver disease and cirrhosis","K70, K73-K74",94,1,,,
+4,"Alcoholic liver disease",K70,95,94,,,
+4,"Other chronic liver disease and cirrhosis",K73-K74,96,94,,,
+4,"Cholelithiasis and other disorders of gallbladder",K80-K82,97,1,,,
+4,"Nephritis, nephrotic syndrome and nephrosis","N00-N07, N17-N19, N25-N27",98,1,,,
+4,"Acute and rapidly progressive nephritic and nephrotic syndrome","N00-N01, N04",99,98,,,
+4,"Chronic glomerulonephritis, nephritis and nephropathy not specified as acute or chronic, and renal sclerosis unspecified","N02-N03, N05-N07, N26",100,98,,,
+4,"Renal failure",N17-N19,101,98,,,
+4,"Other disorders of kidney","N25, N27",102,98,,,
+4,"Infections of kidney","N10-N12, N13.6, N15.1",103,1,,,
+4,"Hyperplasia of prostate",N40,104,1,,,
+4,"Inflammatory diseases of female pelvic organs",N70-N76,105,1,,,
+4,"Pregnancy, childbirth and the puerperium",O00-O99,106,1,,,
+4,"Pregnancy with abortive outcome",O00-O07,107,106,,,
+4,"Other complications of pregnancy, childbirth and the puerperium",O10-O99,108,106,,,
+4,"Certain conditions originating in the perinatal period",P00-P96,109,1,,,
+4,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,110,1,,,
+4,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,111,1,,,
+4,"All other diseases (residual)",,112,1,,15,
+4,"Accidents (unintentional injuries)","V01-X59, Y85-Y86",113,1,,,
+4,"Transport accidents","V01-V99, Y85",114,113,,,
+4,"Motor vehicle accidents",,115,114,,16,
+4,"Other land transport accidents",,116,114,,17,
+4,"Water, air and space, and other and unspecified transport accidents and their sequelae","V90-V99, Y85",117,114,,,
+4,"Nontransport accidents","W00-X59, Y86",118,113,,,
+4,Falls,W00-W19,119,118,,,
+4,"Accidental discharge of firearms",W32-W34,120,118,,,
+4,"Accidental drowning and submersion",W65-W74,121,118,,,
+4,"Accidental exposure to smoke, fire and flames",X00-X09,122,118,,,
+4,"Accidental poisoning and exposure to noxious substances",X40-X49,123,118,,,
+4,"Other and unspecified nontransport accidents and their sequelae","W20-W31, W35-W64, W75-W99, X10-X39, X50-X59, Y86",124,118,,,
+4,"Intentional self-harm (suicide)","X60-X84, Y87.0",125,1,,,
+4,"Intentional self-harm (suicide) by discharge of firearms",X72-X74,126,125,,,
+4,"Intentional self-harm (suicide) by other and unspecified means and their sequelae","X60-X71, X75-X84, Y87.0",127,125,,,
+4,"Assault (homicide)","X85-Y09, Y87.1",128,1,,,
+4,"Assault (homicide) by discharge of firearms",X93-X95,129,128,,,
+4,"Assault (homicide) by other and unspecified means and their sequelae","X85-X92, X96-Y09, Y87.1",130,128,,,
+4,"Legal intervention","Y35, Y89.0",131,1,,,
+4,"Events of undetermined intent","Y10-Y34, Y87.2, Y89.9",132,1,,,
+4,"Discharge of firearms, undetermined intent",Y22-Y24,133,132,,,
+4,"Other and unspecified events of undetermined intent and their sequelae","Y10-Y21, Y25-Y34, Y87.2, Y89.9",134,132,,,
+4,"Operations of war and their sequelae","Y36, Y89.1",135,1,,,
+4,"Complications of medical and surgical care","Y40-Y84, Y88",136,1,,,
+5,"Number of deaths",,1,,,,
+5,"Age-specific mortality rate per 100,000 population",,2,,,,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period",..
+"less than the limit of detection",<LOD
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded",0s
+"data quality: excellent",A
+"data quality: very good",B
+"data quality: good",C
+"data quality: acceptable",D
+"use with caution",E
+"too unreliable to be published.",F
+"not applicable",...
+preliminary,p
+revised,r
+"suppressed to meet the confidentiality requirements of the Statistics Act",x
+terminated,t
+
+"Survey Code","Survey Name"
+3233,"Vital Statistics - Death Database"
+
+"Subject Code","Subject Name"
+13,Health
+
+"Note ID",Note
+1,"Sources: Statistics Canada, Canadian Vital Statistics, Birth and Death Databases and Appendix II of the publication ""Mortality Summary List of Causes"" (catalogue number 84F0209XIE)"
+2,"Death refers to the permanent disappearance of all evidence of life at any time after a live birth has taken place. Stillbirths are excluded."
+3,"The number of deaths in this table is based on the deceased's usual place of residence."
+4,"Counts in this table exclude deaths of non-residents of Canada."
+5,"For data year 2000 to 2009, missing data on sex of the deceased were imputed based on death registration number. Starting with 2010 data year, missing data on sex of the deceased were imputed based on the cause of death information and a logistic regression."
+6,"Age attained at the last birthday preceding death."
+7,"For ""Age at time of death, all ages"", the mortality rate represents the crude death rate or the number of deaths during a given year per 100,000 population as of July 1 of the same year."
+8,"For ""Age at time of death, under 1 year"", mortality rate calculation uses live births in calendar year instead of the under one year of age population, except for 2012 where the mortality rate is based on the estimated population under one year of age."
+9,"For ""Age at time of death, 1 to 4 years"", mortality rate calculation uses population estimates for 0 to 4 year olds less live births in calendar year, except for 2012 where the mortality rate for 1 to 4 year olds is based on the population estimate for this age group."
+10,"For ""Age at time of death"", each age group except ""All ages"", the mortality rate represents the age-specific death rate or the number of deaths in a particular age group during a given year per 100,000 population in the same age group as of July 1 of the same year."
+11,"The cause of death tabulated is the underlying cause of death. This is defined as (a) the disease or injury which initiated the train of events leading directly to death, or (b) the circumstances of the accident or violence which produced the fatal injury. The underlying cause is selected from the conditions listed on the medical certificate of cause of death."
+12,"World Health Organization (WHO), International Statistical Classification of Diseases and Related Health Problems, Tenth Revision (ICD-10)"
+13,"National Center for Health Statistics, United States. ""B"" list in ""Instruction Manual; Part 9; ICD-10 Cause-of-Death Lists for Tabulating Mortality Statistics""."
+14,"Other and unspecified infectious and parasitic diseases, and their sequelae A00, A05, A20 to A36, A42 to A44, A48 to A49, A54 to A79, A81 to A82, A85.0 to A85.1, A85.8, A86 to B04, B06 to B09, B25 to B49, B55 to B99."
+15,"All other diseases (residual) D65 to E07, E15 to E34, E65 to F99, G04 to G14, G23 to G25, G31 to H93, K00 to K22, K29 to K31, K50 to K66, K71 to K72, K75 to K76, K83 to M99, N13.0 to N13.5, N13.7 to N13.9, N14, N15.0, N15.8 to N15.9, N20 to N23, N28 to N39, N41 to N64, N80 to N98. As of 2003, also includes U04."
+16,"Motor vehicle accidents V02 to V04, V09.0, V09.2, V12 to V14, V19.0 to V19.2, V19.4 to V19.6, V20 to V79, V80.3 to V80.5, V81.0 to V81.1, V82.0 to V82.1, V83 to V86, V87.0 to V87.8, V88.0 to V88.8, V89.0, V89.2."
+17,"Other land transport accidents V01, V05 to V06, V09.1, V09.3 to V09.9, V10 to V11, V15 to V18, V19.3, V19.8 to V19.9, V80.0 to V80.2, V80.6 to V80.9, V81.2 to V81.9, V82.2 to V82.9, V87.9, V88.9, V89.1, V89.3, V89.9."
+18,"The following standard symbols are used in this Statistics Canada table: (..) for figures not available for a specific reference period and (...) for figures not applicable."
+19,"The population estimates used for the 2000 mortality rate calculations are July 1, 2000 updated postcensal estimates, adjusted for net census undercoverage and include non-permanent residents. These population estimates appear in the publication ""Annual Demographic Statistics, 2001"" (catalogue number 91-213-XIB/XPB)."
+20,"The population estimates used for the 2001 mortality rate calculations are July 1, 2001 updated postcensal estimates, adjusted for net census undercoverage and include non-permanent residents. These population estimates appear in the publication ""Annual Demographic Statistics, 2002"" (catalogue number 91-213-XIB/XPB)."
+21,"The population estimates used for the 2002 mortality rate calculations are July 1, 2002 updated postcensal estimates, adjusted for net census undercoverage and include non-permanent residents. These population estimates appear in the publication ""Annual Demographic Statistics, 2003"" (catalogue number 91-213-XIB/XPB)."
+22,"The population estimates used for the 2003 mortality rate calculations are July 1, 2003 updated postcensal estimates, adjusted for net census undercoverage and include non-permanent residents. These population estimates appear in the publication ""Annual Demographic Statistics, 2004"" (catalogue number 91-213-XIB/XPB)."
+23,"The population estimates used for the 2004 mortality rate calculations are July 1, 2004 updated postcensal estimates, adjusted for net census undercoverage and include non-permanent residents. These population estimates appear in the publication ""Annual Demographic Statistics, 2005"" (catalogue number 91-213-XIB/XPB)."
+24,"For data year 2005 to 2009, the population estimates used to calculate the mortality rate are presented in the Appendix II of the publication ""Mortality Summary List of Causes"" (catalogue number 84F0209XIE)."
+25,"Starting with the 2010 data year, information regarding the population estimates used for the mortality rate calculations is found in the ""Data sources"" entry for survey number 3233."
+26,"Starting with the 2010 data year, age is imputed where unknown."
+27,"The totals (all causes of death) by age group and/ or sex presented in this table may not reflect those given in CANSIM tables 102-0501 to 102-0510, 102-0030 due to the correction of age or sex information that was inconsistent with the underlying cause of death."
+28,"For reference years 2000 to 2009, the age-specific mortality rates for the category ""Both sexes"" have been corrected. The correction affects only the rates for the following 9 sex-specific grouped causes of death: Malignant neoplasm of cervix uteri [C53], Malignant neoplasms of corpus uteri and uterus, part unspecified [C54-C55], Malignant neoplasm of ovary [C56], Malignant neoplasm of prostate [C61], Hyperplasia of prostate [N40], Inflammatory diseases of female pelvic organs [N70-N76], Pregnancy, childbirth and the puerperium [O00-O99], Pregnancy with abortive outcome [O00-O07] and Other complications of pregnancy, childbirth and the puerperium [O10-O99]. Prior to the correction, the rates for these 9 groups were calculated using either the male or female population; the corrected values use the combined male-female population, making them consistent with the 2010 and 2011 rates."
+29,"During the production of each year's birth/death/stillbirth statistics, data from previous years may be revised to reflect any updates or changes that have been received from the provincial and territorial vital statistics registrars."
+30,"Starting with the 2013 reference year, information regarding new and terminated cause of death codes, as well as any changes to the cause of death descriptions, are available upon request; please contact Statistics Canada's Statistical Information Service (toll-free 1-800-263-1136; 514-283-8300; STATCAN.infostats-infostats.STATCAN@Canada.ca)."
+31,"Starting with the 2013 reference year, a new coding system was used to select the underlying cause of death. For more information or to obtain documentation regarding the impact of this change, please contact Statistics Canada's Statistical Information Service (toll-free 1-800-263-1136; 514-283-8300; STATCAN.infostats-infostats.STATCAN@Canada.ca)."
+32,"The data for the 2016 reference year are preliminary."
+
+"Correction ID","Correction Date","Correction Note"
+
