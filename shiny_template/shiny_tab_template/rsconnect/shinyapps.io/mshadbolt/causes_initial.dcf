@@ -5,8 +5,8 @@ account: mshadbolt
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 512622
-bundleId: 1642168
+bundleId: 1642525
 url: https://mshadbolt.shinyapps.io/causes_initial/
-when: 1539531764.42936
+when: 1539553381.007
 asMultiple: FALSE
 asStatic: FALSE
