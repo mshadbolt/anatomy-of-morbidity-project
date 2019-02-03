@@ -3,11 +3,11 @@ import requests
 import zipfile
 import io
 import os
+import requests
 
-with open('statcan.html') as infile:
-    html_doc = infile.read()
+r = requests.get("https://www150.statcan.gc.ca/n1/daily-quotidien/180628/dq180628b-cansim-eng.htm")
 
-soup = BeautifulSoup(html_doc, 'html.parser')
+soup = BeautifulSoup(r.text, 'html.parser')
 
 for tag in soup.find_all(attrs={'class': 'arrayid'}):
     tag = tag.string[1:-1]
