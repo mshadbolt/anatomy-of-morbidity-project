@@ -2,6 +2,8 @@
 
 The HackSeq18 Anatomy of Morbidity project space.
 
+Article: https://www.datadriveninvestor.com/2019/06/30/hacking-disease-and-death/
+
 ## Mission
 Everyone — corporations, governments, individuals — has data, but few people know how to use it effectively. Data can tell us much about how to make better decisions, but often this knowledge is hidden within the numbers. In this hackathon, we will be using Vital Statistics open data that's available in the form of large unstructured statistics into user-friendly, dynamic, and interactive plots and maps.
 
